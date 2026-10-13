@@ -1,0 +1,32 @@
+import {renderJobDetail,renderEmployerDetail} from './detail-pages.js';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export async function showTrikonetDetail(type,slug,api){
+ const host=document.querySelector('#apus-main-content');const record=(await api('wp/'+type+'?slug='+encodeURIComponent(slug)))[0];if(!record){host.innerHTML='<h1>Page not found</h1>';return}
+ const link=document.createElement('link');link.rel='stylesheet';link.href='/trikonet-detail.css';document.head.append(link);
+ let employer=record,org=[],related=[],total=0;
+ if(type==='job_listing'){
+ const empSlug=(record.metas?._job_employer_url||'').split('/').filter(Boolean).pop();employer=empSlug?(await api('wp/employer?slug='+encodeURIComponent(empSlug)))[0]:null;
+ if(employer){[org,{total}]=await Promise.all([api('wp/job_listing?employer_slug='+employer.slug+'&per_page=8'),api('wp/count?type=job_listing&employer_slug='+employer.slug)]);org=org.filter(j=>j.slug!==slug);org.totalCount=Math.max(0,total-1)}
+ const category=Object.values(record.metas?._job_category||{})[0];related=await api('wp/job_listing?per_page=8'+(category?'&category='+encodeURIComponent(category):''));
+ host.innerHTML=renderJobDetail(record,employer,location.pathname,org,related);
+ host.querySelectorAll('.wordpress-content ins.adsbygoogle').forEach(ad=>{const wrapper=ad.closest('.code-block');if(wrapper)wrapper.remove();else ad.remove()});
+ const save=host.querySelector('.save');const saved=()=>JSON.parse(localStorage.getItem('medbiomate-bookmarks')||'[]');const update=()=>{const yes=saved().some(j=>j.id===record.id);save.setAttribute('aria-pressed',yes);save.style.background=yes?'#c7dcff':''};update();save.onclick=()=>{let rows=saved();rows=rows.some(j=>j.id===record.id)?rows.filter(j=>j.id!==record.id):[...rows,record];localStorage.setItem('medbiomate-bookmarks',JSON.stringify(rows));update()};
+ const modal=host.querySelector('#jobReportModal'),reportForm=host.querySelector('#jobReportForm');
+ const close=()=>{modal.hidden=true;modal.setAttribute('aria-hidden','true');document.body.style.removeProperty('overflow');host.querySelector('#openJobReportBtn').focus()};
+ host.querySelector('#openJobReportBtn').onclick=()=>{modal.hidden=false;modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';reportForm.querySelector('input[name=reason]').focus()};
+ host.querySelector('#closeJobReportBtn').onclick=close;modal.onclick=e=>{if(e.target===modal)close()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
+ reportForm.onsubmit=async e=>{e.preventDefault();const button=reportForm.querySelector('[type=submit]'),status=reportForm.querySelector('.job-report-message');button.disabled=true;try{await api('job-reports',{method:'POST',body:JSON.stringify({...Object.fromEntries(new FormData(reportForm)),jobPath:location.pathname})});status.textContent='Thank you. This job has been reported for review.';reportForm.reset()}catch(err){status.textContent=err.message}finally{button.disabled=false}};
+ host.querySelector('.detail-resume-promo').href='/my-resume';
+ }else{
+ const page=Math.max(1,Number(new URLSearchParams(location.search).get('jobsPage'))||1);[org,{total}]=await Promise.all([api('wp/job_listing?employer_slug='+slug+'&per_page=10&page='+page),api('wp/count?type=job_listing&employer_slug='+slug)]);
+ const normalized=org.map(j=>({title:j.title.rendered,slug:j.slug,categories:Object.values(j.metas?._job_category||{}),locations:Object.values(j.metas?._job_location||{}),type:Object.values(j.metas?._job_type||{}).join(', '),date:j.date}));
+ host.innerHTML=renderEmployerDetail({...record,jobPagination:{page,total}},location.pathname,normalized);
+ const select=name=>{host.querySelectorAll('[data-tab]').forEach(t=>t.classList.toggle('active',t.dataset.tab===name));host.querySelectorAll('[data-panel]').forEach(p=>p.classList.toggle('active',p.dataset.panel===name))};host.querySelectorAll('[data-tab]').forEach(t=>t.onclick=()=>select(t.dataset.tab));select(new URLSearchParams(location.search).get('tab')||'overview');
+ const follow=host.querySelector('.emp-follow-btn');follow.onclick=()=>{let rows=JSON.parse(localStorage.getItem('medbiomate-followed-employers')||'[]');const exists=rows.includes(slug);rows=exists?rows.filter(x=>x!==slug):[...rows,slug];localStorage.setItem('medbiomate-followed-employers',JSON.stringify(rows));follow.textContent=exists?'+ Follow':'Following'};
+ host.querySelector('#empOpenClaimBtn').onclick=()=>location.href='/contact';host.querySelector('#openRateCompanyBtn').onclick=()=>{const d=document.createElement('dialog');d.className='mb-dialog';d.innerHTML='<h2>Rate Company</h2><form><label>Rating<select name="rating">'+[5,4,3,2,1].map(n=>'<option>'+n+'</option>').join('')+'</select></label><label>Workplace feedback<textarea name="text" required minlength="20" maxlength="2000"></textarea></label><button class="mb-button">Submit review</button><button type="button">Cancel</button></form><p role="status"></p>';document.body.append(d);d.querySelector('[type=button]').onclick=()=>d.close();d.querySelector('form').onsubmit=async e=>{e.preventDefault();try{await api('company-reviews/'+slug,{method:'POST',body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});d.close();location.reload()}catch(err){d.querySelector('[role=status]').textContent=err.message}};d.showModal()};
+ const reviewData=await api('company-reviews/'+slug);host.querySelector('#empTabReviewsBadge').textContent=reviewData.count;
+ const panel=host.querySelector('#panel-reviews');panel.insertAdjacentHTML('beforeend',reviewData.reviews.map(r=>'<article class="emp-card-block"><strong>'+esc(r.name)+' · '+r.rating+'/5</strong><p>'+esc(r.text)+'</p></article>').join(''));
+ const search=host.querySelector('.emp-card-sublink');if(search)search.href='/jobs-list?employer_slug='+slug;
+ }
+ document.title=(record.title.rendered||record.title)+' | Medbiomate';
+}

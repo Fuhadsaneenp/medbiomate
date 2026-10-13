@@ -1,0 +1,15 @@
+{
+  "name": "medbiomate-webapp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "dev:backend": "node backend/server.mjs",
+    "check": "node --check server.mjs && node --check render-job.mjs && node --check public/app.js && node --check backend/server.mjs && node --check backend/catalogue.mjs && node --check backend/public/app.js && node --check backend/public/admin.js",
+    "import:wordpress": "python3 scripts/import-wordpress.py",
+    "test": "node --test tests/migration.test.mjs",
+    "test:http": "node tests/http-smoke.mjs"
+  }
+}

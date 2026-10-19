@@ -1,3 +1,4 @@
+import {renderJobDirectory} from './trikonet-listing.js';
 import {renderEmployers} from './employer-directory.js';
 import {renderSitePage} from './site-pages.js';
 import {renderAccount,renderWorkspace,renderPasswordReset} from './member-pages.js';
@@ -18,16 +19,17 @@ const heading=(title,subtitle='')=>`<div class="mb-heading"><h1>${esc(title)}</h
 const jobLocation=j=>Object.values(j.metas?._job_location||{}).join(', ');
 const jobCard=j=>`<a class="mb-card" href="/job/${esc(j.slug)}">${j.metas?._job_logo?`<img src="${esc(j.metas._job_logo)}" alt="${esc(j.metas._job_employer_name)}" loading="lazy">`:''}<p>${esc(j.metas?._job_employer_name||'')}</p><h2>${esc(label(j.title))}</h2><p>⌖ ${esc(jobLocation(j))}</p><span class="mb-type">${esc(Object.values(j.metas?._job_type||{}).join(', ')||'Full Time')}</span></a>`;
 function searchForm(params=new URLSearchParams()){return `<form class="mb-search" id="mb-search"><input name="q" aria-label="Job title, keywords" placeholder="Job title, keywords..." value="${esc(params.get('q'))}"><select name="location" aria-label="City or Country">${options(tax.locations,'City or Country',params.get('location'))}</select><select name="category" aria-label="All Categories">${options(tax.categories,'All Categories',params.get('category'))}</select><button class="mb-button">Find Jobs</button></form>`}
-function bindSearch(){document.querySelector('#mb-search')?.addEventListener('submit',e=>{e.preventDefault();location.href='/jobs-list?'+new URLSearchParams(new FormData(e.target))})}
-const path=location.pathname.replace(/\/+$/,'')||'/';
+function bindSearch(){document.querySelector('#mb-search')?.addEventListener('submit',e=>{e.preventDefault();location.href='/jobs?'+new URLSearchParams(new FormData(e.target))})}
+const resolvedJobUrl=JSON.parse(document.getElementById('job-url-data')?.textContent||'null');
+const path=resolvedJobUrl?'/job/'+resolvedJobUrl.slug:location.pathname.replace(/\/+$/,'')||'/';
 function originalCard(template,r,type){
  const node=template.cloneNode(true);const title=node.querySelector(type==='job_listing'?'.job-title a':'.employer-title a');if(title){title.textContent=label(r.title);title.href=(type==='job_listing'?'/job/':'/employer/')+r.slug}
- for(const a of node.querySelectorAll('a')){const href=a.getAttribute('href')||'';if(href.startsWith('/job/')&&type==='job_listing')a.href='/job/'+r.slug;if(href.startsWith('/employer/'))a.href=type==='employer'?'/employer/'+r.slug:(r.metas?._job_employer_url||'/employers-list').replace('https://www.medbiomate.com','')}
- if(type==='job_listing'){const employer=node.querySelector('.employer-title a');if(employer)employer.textContent=r.metas?._job_employer_name||'';const loc=node.querySelector('.job-location');if(loc)loc.textContent=jobLocation(r);const cats=node.querySelector('.job-category');if(cats)cats.innerHTML=Object.values(r.metas?._job_category||{}).map(name=>{const category=items(tax.categories).find(t=>t.name===name);return '<a href="/job-category/'+esc(category?.slug||'')+'">'+esc(name)+'</a>'}).join(', ');const t=node.querySelector('.type-job');if(t)t.textContent=Object.values(r.metas?._job_type||{}).join(', ')}
+ for(const a of node.querySelectorAll('a')){const href=a.getAttribute('href')||'';if(href.startsWith('/job/')&&type==='job_listing')a.href='/job/'+r.slug;if(href.startsWith('/employer/'))a.href=type==='employer'?'/employer/'+r.slug:(r.metas?._job_employer_url||'/employers').replace('https://www.medbiomate.com','')}
+ if(type==='job_listing'){const employer=node.querySelector('.employer-title a');if(employer)employer.textContent=r.metas?._job_employer_name||'';const loc=node.querySelector('.job-location');if(loc)loc.textContent=jobLocation(r);const cats=node.querySelector('.job-category');if(cats)cats.innerHTML=Object.values(r.metas?._job_category||{}).map(name=>{const category=items(tax.categories).find(t=>t.name===name);return '<a href="/category/'+esc(category?.slug||'')+'">'+esc(name)+'</a>'}).join(', ');const t=node.querySelector('.type-job');if(t)t.textContent=Object.values(r.metas?._job_type||{}).join(', ')}
  for(const img of node.querySelectorAll('img')){const logo=type==='job_listing'?r.metas?._job_logo:r.metas?._employer_logo;if(logo){img.src=logo;img.removeAttribute('srcset');img.alt=label(r.title)}else img.remove()}
  node.querySelectorAll('.btn-add-job-shortlist,.btn-follow').forEach(el=>el.remove());node.removeAttribute('id');return node;
 }
-async function originalDirectory(type,p,page){return renderDesignDirectory({type,p,page,tax,api})}
+async function originalDirectory(type,p,page){if(type==='job_listing'){await renderJobDirectory(tax,api);return true}return renderDesignDirectory({type,p,page,tax,api})}
 async function directory(type,params){
  const p=params||new URLSearchParams(location.search),page=Math.max(1,Number(p.get('page'))||1);if(!p.has('per_page'))p.set('per_page','12');p.set('page',String(page));
  if(await originalDirectory(type,p,page))return;
@@ -40,7 +42,7 @@ async function detail(type,slug){
  const rows=await api('wp/'+type+'?slug='+encodeURIComponent(slug));const r=items(rows)[0];if(!r){main.innerHTML=heading('Page not found');return;}
  document.title=label(r.title)+' | Medbiomate';
  const m=r.metas||{},href=m._job_apply_type==='email'&&m._job_apply_email?'mailto:'+m._job_apply_email:m._job_apply_url;
- main.innerHTML=heading(label(r.title),type==='job_listing'?m._job_employer_name:'')+`<div class="mb-page mb-details"><article class="mb-content">${label(r.content)}</article><aside class="mb-sidebar">${type==='job_listing'?`<h2>Job Overview</h2><p>⌖ ${esc(jobLocation(r))}</p><p>${esc(Object.values(m._job_type||{}).join(', '))}</p><p>${esc(m.experience||m._job_experience||'')}</p><p>${esc(m.qualification||'')}</p>${href?`<a class="mb-button" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Apply Now</a>`:'<p>Application details are included in the job description.</p>'}<button class="mb-button" id="bookmark">Save Job</button><p class="mb-status" id="bookmark-status"></p>`:'<a class="mb-button" href="/jobs-list?employer_slug='+esc(slug)+'">View Open Jobs</a>'}</aside></div>`;
+ main.innerHTML=heading(label(r.title),type==='job_listing'?m._job_employer_name:'')+`<div class="mb-page mb-details"><article class="mb-content">${label(r.content)}</article><aside class="mb-sidebar">${type==='job_listing'?`<h2>Job Overview</h2><p>⌖ ${esc(jobLocation(r))}</p><p>${esc(Object.values(m._job_type||{}).join(', '))}</p><p>${esc(m.experience||m._job_experience||'')}</p><p>${esc(m.qualification||'')}</p>${href?`<a class="mb-button" href="${esc(href)}" target="_blank" rel="noopener noreferrer">Apply Now</a>`:'<p>Application details are included in the job description.</p>'}<button class="mb-button" id="bookmark">Save Job</button><p class="mb-status" id="bookmark-status"></p>`:'<a class="mb-button" href="/jobs?employer_slug='+esc(slug)+'">View Open Jobs</a>'}</aside></div>`;
  document.querySelector('#bookmark')?.addEventListener('click',()=>{const saved=JSON.parse(localStorage.getItem('medbiomate-bookmarks')||'[]');if(!saved.some(j=>j.id===r.id))saved.push(r);localStorage.setItem('medbiomate-bookmarks',JSON.stringify(saved));document.querySelector('#bookmark-status').textContent='Job saved to My Bookmarks.'});
 }
 function authDialog(register=false){
@@ -49,10 +51,12 @@ function authDialog(register=false){
 async function dashboard(){let user;try{user=(await api('auth/me')).user}catch{main.innerHTML=heading('Candidate Dashboard')+'<div class="mb-page"><button id="dashboard-login" class="mb-button">Login / Register</button></div>';document.querySelector('#dashboard-login').onclick=()=>authDialog();return}main.innerHTML=heading('Candidate Dashboard','Welcome, '+user.name)+`<div class="mb-page"><h2>My Bookmarks</h2><div class="mb-grid">${JSON.parse(localStorage.getItem('medbiomate-bookmarks')||'[]').map(jobCard).join('')}</div><button class="mb-button" id="logout">Logout</button></div>`;document.querySelector('#logout').onclick=async()=>{await api('auth/logout',{method:'POST'});location.href='/'}}
 async function cmsPage(){const rows=await fetch('/api-content/pages').then(r=>r.json());const r=rows.find(r=>r.link.replace(/\/+$/,'')===path||r.slug===path.slice(1));main.innerHTML=r?heading(label(r.title))+`<article class="mb-page mb-content">${label(r.content)}</article>`:heading('Page not found')}
 try{
- if(path==='/')await renderHome(tax,api);
- else if(path.startsWith('/job-location/')||path.startsWith('/job-category/')||path.startsWith('/job-type/')){const group=path.split('/')[1],slug=path.split('/')[2],rows=group==='job-location'?tax.locations:group==='job-category'?tax.categories:tax.types;const t=items(rows).find(r=>r.slug===slug);const p=new URLSearchParams(location.search);p.set(group==='job-location'?'location':group==='job-category'?'category':'job_type',t?.name||slug);await directory('job_listing',p)}
- else if(['/jobs','/jobs-list'].includes(path))await directory('job_listing');
- else if(['/employers','/employers-list'].includes(path))await renderEmployers(api);
+ if(['/resume-library','/resume-builder','/resume-maker','/ats-resume-builder','/cv-builder','/services/resume-maker','/services/resume-builder','/services/ats-resume-builder','/services/cv-builder'].includes(path)){const {stylesheet}=await import('./ui.js');stylesheet('/cv-builder.css');main.innerHTML='<div id="cv-builder-root"></div>';const {initCVBuilder}=await import('./cvBuilder.js');initCVBuilder('#cv-builder-root');document.title='Résumé Library & CV Builder | Medbiomate'}
+ else if(path==='/')await renderHome(tax,api);
+ else if(path.startsWith('/job-location/')||path.startsWith('/category/')||path.startsWith('/job-type/')){const group=path.split('/')[1],slug=path.split('/')[2],rows=group==='job-location'?tax.locations:group==='category'?tax.categories:tax.types;const t=items(rows).find(r=>r.slug===slug);const p=new URLSearchParams(location.search);p.set(group==='job-location'?'location':group==='category'?'category':'job_type',t?.name||slug);await directory('job_listing',p)}
+ else if(path==='/nurse-jobs-in-uae'){const p=new URLSearchParams(location.search);p.set('category','Nurse Jobs');await directory('job_listing',p)}
+ else if(['/jobs'].includes(path))await directory('job_listing');
+ else if(['/employers','/employers'].includes(path))await renderEmployers(api);
  else if(await renderSitePage(path,tax,api)){}
  else if(path==='/category/hospital')await directory('posts');
  else if(path==='/blog'&&!document.querySelector('.blog-content,.posts-wrapper,.blog-grid'))await directory('posts');
@@ -70,7 +74,7 @@ try{
 for(const form of document.querySelectorAll('form')){
  if(form.id==='mb-search')continue;
  if(form.querySelector('[name="filter-title"]')||form.querySelector('[placeholder="Job title, keywords..."]')){
-  const field=form.querySelector('[placeholder="Job title, keywords..."]');field.name='q';const selects=form.querySelectorAll('select');if(selects[0]){selects[0].name='location';selects[0].innerHTML=options(tax.locations,'City or Country')}if(selects[1]){selects[1].name='category';selects[1].innerHTML=options(tax.categories,'All Categories')}form.onsubmit=e=>{e.preventDefault();location.href='/jobs-list?'+new URLSearchParams(new FormData(form))};
+  const field=form.querySelector('[placeholder="Job title, keywords..."]');field.name='q';const selects=form.querySelectorAll('select');if(selects[0]){selects[0].name='location';selects[0].innerHTML=options(tax.locations,'City or Country')}if(selects[1]){selects[1].name='category';selects[1].innerHTML=options(tax.categories,'All Categories')}form.onsubmit=e=>{e.preventDefault();location.href='/jobs?'+new URLSearchParams(new FormData(form))};
  }
 }
 document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('apus_login')||href.includes('apus_register')){e.preventDefault();authDialog()};if(href==='#'&&/Dashboard|Job Alerts|My Bookmarks/.test(a.textContent)){e.preventDefault();location.href='/dashboard'}});

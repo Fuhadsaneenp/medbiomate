@@ -57,3 +57,6 @@ Ad placements now use the supplied Trikonet display-ads module adapted to Medbio
 
 ### Public page consistency update
 The main public pages now share the supplied TriKonet layout patterns with Medbiomate branding, including the company directory, account pages, career workspace, article pages, contact/FAQ and policy layouts. See [the detailed page review](docs/trikonet-page-review.md) for route coverage, behavior and validation limits. The employer directory uses actual company/job counts with filtering and sorting before pagination. `npm test` includes the dedicated directory tests.
+
+### TriKonet route parity
+The canonical directories are `/jobs`, `/employers` and `/category/:slug`. Older Medbiomate URLs redirect to them. Imported jobs keep `/job/:slug`; new jobs use their saved `/jobs/:slug` path. Admin login and the 33 admin navigation views use the supplied TriKonet source with Medbiomate branding. The original résumé library/CV builder assets are available at `/resume-library` and `/resume-builder`. See `docs/trikonet-parity-audit.json` and `docs/trikonet-page-review.md` for verification and remaining visual-review limits.

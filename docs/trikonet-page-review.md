@@ -35,3 +35,13 @@ Saved jobs, followed companies and opened applications use the existing Medbioma
 - JavaScript syntax checks cover the new modules and existing application entry points.
 - Browser checks cover employer search, company profile, mobile filters/menu, job search/detail/bookmarks and the saved-job workspace.
 - Main account, contact, about, FAQ, blog, category and policy layouts checked at 390px; desktop employer and account layouts also inspected.
+
+## Route and source parity correction
+
+The canonical public directories now follow TriKonet: `/jobs`, `/employers`, and `/category/:slug`. Legacy Medbiomate directory and category links redirect permanently while preserving search parameters. Existing imported jobs retain `/job/:slug`; newly published jobs use their stored `/jobs/:slug` URL. The server resolves both through `/api/job-url`, redirects aliases to the published URL, and provides the resolved slug to the detail controller.
+
+The original TriKonet job-listing function and listing styles are now used, with Medbiomate data and blue accents. The previous separate admin-login interpretation was replaced with the original TriKonet `adminLoginPage` template. Authentication remains server-side. The full original admin workspace already matches the supplied source after brand normalisation: 33 navigation views, including job/company editors, taxonomies, claims/reports, candidates, media, posts, pages, SEO and user management. The base stylesheet required by the standalone admin shell was restored. Named logo assets now resolve to Medbiomate.
+
+Company profile job rows now receive their employer identity and canonical public URL, fixing empty Jobs tabs and links to newly published jobs. The original résumé library/CV builder engine, stylesheet and plugin assets are included, with the same résumé routes and Medbiomate API integration.
+
+Validation: 20 automated tests; localhost admin login/session/logout, catalogue pagination, temporary job publishing/deletion, both job URL forms and redirect checks. Temporary records are removed afterward. Source rendering confirms the company Jobs tab and full admin workspace render. **Browser access was disabled in Work settings during this correction, so the latest source-derived layouts have not received a fresh visual sign-off.** This is not a claim of pixel-perfect verification of every screen or of configured production email, résumé export and external services. See `trikonet-parity-audit.json` for the source comparison.

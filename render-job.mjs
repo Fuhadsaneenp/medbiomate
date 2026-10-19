@@ -1,3 +1,4 @@
+import {publicJobPath} from './public/job-urls.js';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text=v=>typeof v==='object'?v?.rendered||'':v||'';
 export function replaceElement(source,className,inner){
@@ -17,7 +18,7 @@ export function renderJob(template,job){
  html=replaceElement(html,'job-detail-employer-info',`<div class="job-employer-header">${m._job_logo?'<div class="employer-thumbnail"><img width="60" src="'+esc(m._job_logo)+'" alt=""></div>':''}<div class="employer-links"><h3 class="employer-title">${esc(m._job_employer_name)}</h3><a class="more-link" href="${esc((m._job_employer_url||'/employers-list').replace('https://www.medbiomate.com',''))}">View Company Profile</a></div></div>`);
  // Template-related records are replaced with a catalogue link.
  html=replaceElement(html,'related-jobs','<a class="btn btn-theme" href="/jobs-list">Browse More Jobs</a>');
- html=html.replace(/<meta[^>]+(?:og:|twitter:)[^>]+>/g,'').replace(/<link[^>]+rel=["']canonical["'][^>]+>/g,'<link rel="canonical" href="https://www.medbiomate.com/job/'+esc(job.slug)+'">');
+ html=html.replace(/<meta[^>]+(?:og:|twitter:)[^>]+>/g,'').replace(/<link[^>]+rel=["']canonical["'][^>]+>/g,'<link rel="canonical" href="https://www.medbiomate.com'+esc(publicJobPath(job))+'">');
  return html.replace('</head>','<meta name="description" content="'+esc(title+' at '+(m._job_employer_name||'')+' in '+location)+'"></head>');
 }
 export function renderEmployer(template,employer,jobs=[]){

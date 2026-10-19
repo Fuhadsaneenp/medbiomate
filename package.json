@@ -7,9 +7,9 @@
     "dev": "node server.mjs",
     "start": "node server.mjs",
     "dev:backend": "node backend/server.mjs",
-    "check": "node --check server.mjs && node --check render-job.mjs && node --check public/app.js && node --check backend/server.mjs && node --check backend/catalogue.mjs && node --check backend/public/app.js && node --check backend/public/admin.js",
+    "check": "node --check server.mjs && node --check render-job.mjs && node --check public/app.js && node --check backend/server.mjs && node --check backend/catalogue.mjs && node --check backend/public/app.js && node --check backend/public/admin.js && node --check public/ui.js && node --check public/home-design.js && node --check public/employer-directory.js && node --check public/site-pages.js && node --check public/member-pages.js && node --check public/trikonet-design.js && node --check public/detail-controller.js && node --check backend/employer-directory.mjs",
     "import:wordpress": "python3 scripts/import-wordpress.py",
-    "test": "node --test tests/migration.test.mjs",
+    "test": "node --test tests/migration.test.mjs backend/employer-directory.test.mjs",
     "test:http": "node tests/http-smoke.mjs"
   }
 }

@@ -48,8 +48,8 @@ const server=http.createServer(async(req,res)=>{
    const mapped=routes[path==='/'?'/':path+'/']||(['/jobs','/jobs-list'].includes(path)?'jobs-list.html':['/employers','/employers-list'].includes(path)?'employers-list.html':/^\/job-(category|location|type)\/[^/]+$/.test(path)?'jobs-list.html':path==='/category/hospital'?'blog.html':null);
    if(mapped){file=resolve(root,'public',mapped)}else{
     const pages=JSON.parse(await readFile(resolve(root,'backend/data/pages.json'),'utf8'));const posts=JSON.parse(await readFile(resolve(root,'backend/data/posts.json'),'utf8'));
-    const record=[...pages,...posts].find(r=>sitePath(r.link)===path);
-    const appPaths=['/dashboard','/candidate-dashboard','/my-bookmarks'];
+    const record=[...pages,...posts].find(r=>sitePath(r.link)===path||(path.startsWith('/blog/')&&r.slug===path.split('/').pop()));
+    const appPaths=['/dashboard','/candidate-dashboard','/my-bookmarks','/login','/register','/signup','/forgot-password','/login-register','/register-candidate','/register-employer','/profile','/my-account','/saved-jobs','/applied-jobs','/followed-companies','/following-employers','/my-applied','/shortlist-jobs','/job-categories','/job-locations','/submit-job'];
     let template=await readFile(resolve(root,'public/about.html'),'utf8');
     const marker='mb-server-page';template=template.replace('id="apus-main-content"','id="apus-main-content" class="'+marker+'"');
     const title=record?.title?.rendered||(appPaths.includes(path)?'Candidate Dashboard':'Page not found');

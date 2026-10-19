@@ -1,3 +1,6 @@
+import {renderEmployers} from './employer-directory.js';
+import {renderSitePage} from './site-pages.js';
+import {renderAccount,renderWorkspace,renderPasswordReset} from './member-pages.js';
 import {renderHome} from './home-design.js';
 import {initDisplayAds} from './display-ads.js';
 import {showTrikonetDetail} from './detail-controller.js';
@@ -7,6 +10,7 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const label=v=>typeof v==='object'?v?.rendered||'':v||'';
 const api=async(path,options={})=>{const r=await fetch('/api/'+path,{...options,headers:{'Content-Type':'application/json',...options.headers}});const data=await r.json();if(!r.ok)throw Error(data.error||'Request failed');return data};
 let tax={};try{tax=await api('wp/taxonomies')}catch{}
+api('auth/me').then(({user})=>{if(user){const account=document.querySelector('.mb-site-login');account.textContent='My Account';account.href='/profile'}}).catch(()=>{});
 const items=value=>Array.isArray(value)?value:[];
 const options=(rows,title,selected='')=>`<option value="">${title}</option>`+items(rows).map(r=>`<option value="${esc(r.name)}" ${r.name===selected?'selected':''}>${esc(r.name)}</option>`).join('');
 const main=document.querySelector('#main')||document.querySelector('[role=main]')||document.querySelector('.single-listing-wrapper')||document.querySelector('#apus-main-content');
@@ -48,16 +52,18 @@ try{
  if(path==='/')await renderHome(tax,api);
  else if(path.startsWith('/job-location/')||path.startsWith('/job-category/')||path.startsWith('/job-type/')){const group=path.split('/')[1],slug=path.split('/')[2],rows=group==='job-location'?tax.locations:group==='job-category'?tax.categories:tax.types;const t=items(rows).find(r=>r.slug===slug);const p=new URLSearchParams(location.search);p.set(group==='job-location'?'location':group==='job-category'?'category':'job_type',t?.name||slug);await directory('job_listing',p)}
  else if(['/jobs','/jobs-list'].includes(path))await directory('job_listing');
- else if(['/employers','/employers-list'].includes(path))await directory('employer');
+ else if(['/employers','/employers-list'].includes(path))await renderEmployers(api);
+ else if(await renderSitePage(path,tax,api)){}
  else if(path==='/category/hospital')await directory('posts');
  else if(path==='/blog'&&!document.querySelector('.blog-content,.posts-wrapper,.blog-grid'))await directory('posts');
  else if(path.startsWith('/job/'))await showTrikonetDetail('job_listing',path.split('/').pop(),api);
  else if(path.startsWith('/employer/'))await showTrikonetDetail('employer',path.split('/').pop(),api);
  else if(path.startsWith('/blog/'))await detail('posts',path.split('/').pop());
- else if(['/dashboard','/candidate-dashboard','/my-bookmarks','/user-dashboard','/profile','/my-account','/shortlist-jobs','/my-resume','/my-applied','/candidate-alerts','/alerts-jobs','/following-employers'].includes(path))await dashboard();
- else if(['/login-register','/register-candidate','/register-employer'].includes(path)){main.innerHTML=heading('Medbiomate Account')+'<div class="mb-page"><button class="mb-button" id="account-login">Login / Register</button></div>';document.querySelector('#account-login').onclick=()=>authDialog(path.startsWith('/register'));authDialog(path.startsWith('/register'))}
+ else if(['/dashboard','/candidate-dashboard','/my-bookmarks','/user-dashboard','/profile','/my-account','/shortlist-jobs','/my-applied','/following-employers','/saved-jobs','/applied-jobs','/followed-companies'].includes(path))await renderWorkspace(path,api);
+ else if(path==='/forgot-password')await renderPasswordReset(api);
+ else if(['/login','/register','/signup','/login-register','/register-candidate','/register-employer'].includes(path))await renderAccount(path,api);
  else if(path==='/logout'){await api('auth/logout',{method:'POST'});location.href='/'}
- else if(path==='/submit-job'){main.innerHTML=heading('Submit Job')+'<div class="mb-page"><p>Manage and publish healthcare jobs through the employer admin console.</p><a class="mb-button" href="/admin">Open Admin Console</a></div>'}
+ else if(path==='/submit-job'){main.innerHTML='<main><section class="mb-inner-hero"><div class="mb-site-wrap"><span class="mb-home-eyebrow">FOR HEALTHCARE EMPLOYERS</span><h1>Find your next healthcare professional.</h1><p>Manage and publish opportunities through the Medbiomate employer admin console.</p></div></section><section class="mb-prose"><h2>Post a job on Medbiomate</h2><p>Sign in to your employer admin account to create a listing, add application details, and manage your published jobs.</p><a class="mb-site-primary" href="/admin">Open Admin Console →</a><h2>Need an employer account?</h2><p>Contact the Medbiomate team to discuss publishing your healthcare opportunities.</p><a class="mb-home-outline" href="/contact">Contact our team →</a></section></main>'}
  else if(!['/','/about','/contact','/terms','/faq','/privacy-policy','/disclaimer','/career-contact','/resignation-letter-format','/gratuity-calculator','/hospitals-in-dubai'].includes(path))await cmsPage();
 }catch(err){main.innerHTML=heading('Please try again')+`<p class="mb-page">${esc(err.message)}</p>`}
 // Replace plugin-powered controls with native web-app interactions.
@@ -67,7 +73,7 @@ for(const form of document.querySelectorAll('form')){
   const field=form.querySelector('[placeholder="Job title, keywords..."]');field.name='q';const selects=form.querySelectorAll('select');if(selects[0]){selects[0].name='location';selects[0].innerHTML=options(tax.locations,'City or Country')}if(selects[1]){selects[1].name='category';selects[1].innerHTML=options(tax.categories,'All Categories')}form.onsubmit=e=>{e.preventDefault();location.href='/jobs-list?'+new URLSearchParams(new FormData(form))};
  }
 }
-document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('apus_login')||href.includes('apus_register')||/Login \/ Register/.test(a.textContent)){e.preventDefault();authDialog()};if(href==='#'&&/Dashboard|Job Alerts|My Bookmarks/.test(a.textContent)){e.preventDefault();location.href='/dashboard'}});
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';if(href.includes('apus_login')||href.includes('apus_register')){e.preventDefault();authDialog()};if(href==='#'&&/Dashboard|Job Alerts|My Bookmarks/.test(a.textContent)){e.preventDefault();location.href='/dashboard'}});
 const wa=document.createElement('a');wa.className='mb-whatsapp';wa.href='https://wa.me/918606799432';wa.textContent='☏';wa.setAttribute('aria-label','Text us on WhatsApp');document.body.append(wa);
 
 for(const counter of document.querySelectorAll('.elementor-counter-number'))counter.textContent=counter.dataset.toValue||counter.textContent;

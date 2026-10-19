@@ -1,15 +1,13 @@
 import {mountHomeContent} from './trikonet-design.js';
+import {esc,icon,label} from './ui.js';
 export async function renderHome(tax,api){
- const host=document.querySelector('#apus-main-content');
- if(!host)return;
- const illustration='/assets/ef24f6c52136a96fc1d3.webp';
- mountHomeContent(host,tax,illustration);
- try{
-  const rows=(await Promise.all(['NMC','American Hospital','Burjeel','Aster','Mediclinic'].map(name=>api('wp/employer?per_page=5&q='+encodeURIComponent(name))))).flat();
-  const preferred=['nmc','american hospital','burjeel','aster','mediclinic'];
-  const selected=preferred.map(name=>rows.find(r=>String(r.title?.rendered||r.title).toLowerCase().includes(name))).filter(Boolean);
-  for(const r of rows)if(selected.length<5&&!selected.includes(r))selected.push(r);
-  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  document.querySelector('#mb-home-employers').innerHTML=selected.map(r=>{const m=r.metas||{},name=r.title?.rendered||r.title;return `<article class="mb-home-employer"><a class="mb-home-logo" href="/employer/${esc(r.slug)}">${m._employer_logo?`<img src="${esc(m._employer_logo)}" alt="${esc(name)}" loading="lazy">`:esc(name.slice(0,2))}</a><div class="mb-home-company-info"><h3>${esc(name)}</h3><p>${esc(Object.values(m._employer_location||{}).join(', ')||'Healthcare employer')}</p></div><span class="mb-home-tag">Healthcare</span><a class="mb-home-view" href="/jobs-list?employer_slug=${encodeURIComponent(r.slug)}">View jobs</a></article>`}).join('');
- }catch{document.querySelector('#mb-home-employers').innerHTML='<p>Explore healthcare employers and their opportunities in our employer directory.</p>'}
+ const host=document.querySelector('#apus-main-content');if(!host)return;
+ mountHomeContent(host,tax,'/assets/ef24f6c52136a96fc1d3.webp');
+ const jobsSection=`<section class="mb-home-how mb-site-wrap"><h2>How It Works?</h2><p>Your next healthcare opportunity, one step at a time.</p><div>${[['user','01','Create your free account','Build your career workspace and keep your details in one place.','/register'],['search','02','Explore healthcare jobs','Search by specialty, employer, and location across the GCC.','/jobs-list'],['building','03','Take the next step','Find the right role and apply using the employer’s instructions.','/employers-list']].map(([i,n,t,d,h])=>`<a href="${h}"><span class="mb-how-number">${n}</span><span class="mb-how-icon">${icon(i)}</span><h3>${t}</h3><p>${d}</p></a>`).join('')}</div></section>`;
+ host.querySelector('main').insertAdjacentHTML('beforeend',jobsSection);
+ const results=await Promise.allSettled([api('wp/employer-directory?per_page=12'),api('wp/posts?per_page=3')]);
+ const companies=host.querySelector('#mb-home-employers');
+ if(results[0].status==='fulfilled')companies.innerHTML=results[0].value.rows.slice(0,5).map(r=>`<article class="mb-home-employer"><a class="mb-home-logo" href="/employer/${esc(r.slug)}">${r.logo?`<img src="${esc(r.logo)}" alt="${esc(r.title)}" loading="lazy">`:esc(r.title.slice(0,2))}</a><div class="mb-home-company-info"><h3>${esc(r.title)}</h3><p><strong>${r.openJobs.toLocaleString()}</strong> open jobs · ${esc(r.locations[0]||'GCC')}</p></div><span class="mb-home-tag">${esc(r.categories[0]||'Healthcare')}</span><a class="mb-home-view" href="/employer/${esc(r.slug)}?tab=jobs">View jobs</a></article>`).join('');
+ else companies.innerHTML='<p>Explore healthcare employers and their opportunities in our employer directory.</p>';
+ if(results[1].status==='fulfilled'&&results[1].value.length)host.querySelector('main').insertAdjacentHTML('beforeend',`<section class="mb-home-articles"><div class="mb-site-wrap"><div class="mb-home-section-head"><div><span class="mb-home-eyebrow">YOUR NEXT CHAPTER</span><h2>Recent Articles & Career Insights</h2><p>Healthcare news and guidance for your next career move.</p></div><a class="mb-home-outline" href="/blog">View all articles →</a></div><div class="mb-blog-grid">${results[1].value.map(r=>`<article class="mb-article-card"><a class="mb-article-art" href="/blog/${esc(r.slug)}">${icon('building')}<span>HEALTHCARE INSIGHTS</span></a><div><span class="mb-home-eyebrow">CAREER & HEALTHCARE</span><h2><a href="/blog/${esc(r.slug)}">${esc(label(r.title))}</a></h2><a class="mb-text-link" href="/blog/${esc(r.slug)}">Read article ${icon('arrow')}</a></div></article>`).join('')}</div></div></section>`);
 }

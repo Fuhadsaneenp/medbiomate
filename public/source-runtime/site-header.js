@@ -68,39 +68,39 @@ export function renderSiteHeader({ path = '/', currentUser = null, siteChrome = 
                       <small>706 Open Jobs</small>
                     </div>
                   </a>
-                  <a href="/category/accounting-or-finance" class="mega-cat-item">
+                  <a href="/category/pharmacy-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Accounting & Finance</strong>
+                      <strong>Pharmacy Jobs</strong>
                       <small>1,767 Open Jobs</small>
                     </div>
                   </a>
-                  <a href="/category/education-and-training" class="mega-cat-item">
+                  <a href="/category/specialist-doctor-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Education & Training</strong>
+                      <strong>Specialist Doctors</strong>
                       <small>3,148 Open Jobs</small>
                     </div>
                   </a>
-                  <a href="/category/administration" class="mega-cat-item">
+                  <a href="/category/administration-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Administration</strong>
+                      <strong>Healthcare Administration</strong>
                       <small>1,302 Open Jobs</small>
                     </div>
                   </a>
-                  <a href="/jobs?q=IT" class="mega-cat-item">
+                  <a href="/category/biomedical-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>IT & Software</strong>
-                      <small>Tech & Systems</small>
+                      <strong>Biomedical Jobs</strong>
+                      <small>Healthcare Technology</small>
                     </div>
                   </a>
-                  <a href="/category/marketing-and-sales" class="mega-cat-item">
+                  <a href="/category/physiotherapist-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Marketing & Sales</strong>
+                      <strong>Allied Health</strong>
                       <small>627 Open Jobs</small>
                     </div>
                   </a>
-                  <a href="/category/human-resource" class="mega-cat-item">
+                  <a href="/category/medical-laboratory-jobs" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Human Resource</strong>
+                      <strong>Medical Laboratories</strong>
                       <small>654 Open Jobs</small>
                     </div>
                   </a>
@@ -132,8 +132,8 @@ export function renderSiteHeader({ path = '/', currentUser = null, siteChrome = 
                 </div>
                 <div class="mega-cta-card">
                   <span class="mega-badge">13,600+ LISTINGS</span>
-                  <h4>Find Your Role in UAE</h4>
-                  <p>Verified vacancies from top hospitals, schools & enterprises.</p>
+                  <h4>Find Your Healthcare Role</h4>
+                  <p>Healthcare opportunities from hospitals, clinics and medical employers.</p>
                   <a href="/jobs" class="mega-cta-btn">Browse All Jobs →</a>
                 </div>
               </div>
@@ -180,38 +180,38 @@ export function renderSiteHeader({ path = '/', currentUser = null, siteChrome = 
                   </a>
                   <a href="/employers?q=School" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Schools & Academies</strong>
+                      <strong>Medical Centres</strong>
                       <small>320+ Schools</small>
                     </div>
                   </a>
                   <a href="/employers?q=Group" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Corporate Groups</strong>
+                      <strong>Healthcare Groups</strong>
                       <small>850+ Groups</small>
                     </div>
                   </a>
                   <a href="/employers?q=Bank" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Banking & Financial</strong>
-                      <small>Top UAE Banks</small>
+                      <strong>Pharmacies & Pharma</strong>
+                      <small>Pharmacy Employers</small>
                     </div>
                   </a>
                   <a href="/employers?q=Technology" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>IT & Technology</strong>
-                      <small>Tech Companies</small>
+                      <strong>Medical Equipment</strong>
+                      <small>Healthcare Equipment</small>
                     </div>
                   </a>
-                  <a href="/employers?q=Retail" class="mega-cat-item">
+                  <a href="/employers?q=Home+Health+Care" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Retail & Aviation</strong>
-                      <small>Top Conglomerates</small>
+                      <strong>Home Healthcare</strong>
+                      <small>Home Healthcare Providers</small>
                     </div>
                   </a>
-                  <a href="/employers?q=Government" class="mega-cat-item">
+                  <a href="/employers?q=Healthcare+Group" class="mega-cat-item">
                     <div class="mega-cat-info">
-                      <strong>Government Entities</strong>
-                      <small>Public Sector</small>
+                      <strong>Healthcare Providers</strong>
+                      <small>Healthcare Employers</small>
                     </div>
                   </a>
                 </div>
@@ -236,8 +236,8 @@ export function renderSiteHeader({ path = '/', currentUser = null, siteChrome = 
                 </div>
                 <div class="mega-cta-card">
                   <span class="mega-badge">2,700+ COMPANIES</span>
-                  <h4>Top Employers in UAE</h4>
-                  <p>Explore verified hiring companies, direct career pages & hospital networks.</p>
+                  <h4>Healthcare Employers Across the GCC</h4>
+                  <p>Explore healthcare employers, company profiles and their available opportunities.</p>
                   <a href="/employers" class="mega-cta-btn">Browse All Employers →</a>
                 </div>
               </div>

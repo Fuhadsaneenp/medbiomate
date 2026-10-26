@@ -1,61 +1,5 @@
 const escapeAttr = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[char]));
-const footerGuideRows = [
-  {
-    id: 'job-categories',
-    defaultOpen: true,
-    columns: [
-      {
-        title: 'Healthcare & Nursing Jobs',
-        links: [
-          { label: 'Staff Nurse in Dubai', url: '/nurse-jobs-in-uae' },
-          { label: 'Registered Nurse Jobs', url: '/category/registered-nurse-jobs' },
-          { label: 'Nurse Jobs in UAE', url: '/category/nurse-jobs' },
-          { label: 'Healthcare Jobs UAE', url: '/category/healthcare' },
-          { label: 'Consultant Doctor Jobs', url: '/category/consultant-doctor-jobs' },
-          { label: 'General Practitioner Jobs', url: '/category/general-practitioner-jobs' },
-          { label: 'Pharmacist Jobs UAE', url: '/category/pharmacist-jobs' },
-          { label: 'Medical Laboratory Jobs', url: '/category/medical-laboratory-jobs' }
-        ]
-      },
-      {
-        title: 'Finance & Banking Jobs',
-        links: [
-          { label: 'Accounting & Finance Jobs', url: '/category/accounting-finance' },
-          { label: 'Accountant Jobs in UAE', url: '/category/accountant' },
-          { label: 'Finance & Accounts Manager', url: '/category/finance-accounts-manager-jobs' },
-          { label: 'Financial Auditor Jobs', url: '/category/financial-auditor-jobs' },
-          { label: 'Chartered Accountant Jobs', url: '/category/chartered-accountant-jobs' },
-          { label: 'Banking Careers in UAE', url: '/jobs?q=Bank' },
-          { label: 'Tax & Payroll Specialist', url: '/jobs?q=Payroll' }
-        ]
-      },
-      {
-        title: 'IT, Software & Tech Jobs',
-        links: [
-          { label: 'Engineering Jobs in UAE', url: '/category/engineering' },
-          { label: 'Full Stack & Web Developer', url: '/jobs?q=Developer' },
-          { label: 'Cloud & DevOps Engineer', url: '/jobs?q=DevOps' },
-          { label: 'Cyber Security Specialist', url: '/jobs?q=Cyber+Security' },
-          { label: 'IT Support & Systems', url: '/jobs?q=IT+Support' },
-          { label: 'Graphic Designer Jobs', url: '/category/graphic-designer-jobs' },
-          { label: 'Data Analyst Jobs', url: '/category/data-analyst' }
-        ]
-      },
-      {
-        title: 'Sales, Marketing & HR Jobs',
-        links: [
-          { label: 'Human Resource Jobs', url: '/category/human-resource' },
-          { label: 'HR Officer Jobs', url: '/category/human-resources-officer-jobs' },
-          { label: 'Talent Acquisition Specialist', url: '/category/talent-acquisition-specialist-jobs' },
-          { label: 'Digital Marketing Jobs', url: '/category/digital-marketing' },
-          { label: 'Marketing & Sales Jobs', url: '/category/marketing-and-sales' },
-          { label: 'Social Media Marketing', url: '/category/social-media-coordinator-jobs' },
-          { label: 'Customer Service Jobs', url: '/category/customer-service-associate-jobs' }
-        ]
-      }
-    ]
-  }
-];
+const footerGuideRows = [{"id": "job-categories", "defaultOpen": true, "columns": [{"title": "Nursing Jobs", "links": [{"label": "Nurse Jobs", "url": "/category/nurse-jobs"}, {"label": "Registered Nurse Jobs", "url": "/category/registered-nurse-jobs"}, {"label": "Staff Nurse", "url": "/category/staff-nurse"}, {"label": "School Nurse Jobs", "url": "/category/school-nurse-jobs"}, {"label": "Home Nurse Jobs", "url": "/category/home-nurse-jobs"}]}, {"title": "Doctors & Specialists", "links": [{"label": "Specialist Doctor Jobs", "url": "/category/specialist-doctor-jobs"}, {"label": "Consultant Doctor Jobs", "url": "/category/consultant-doctor-jobs"}, {"label": "General Practitioner Jobs", "url": "/category/general-practitioner-jobs"}, {"label": "Dentist Jobs", "url": "/category/dentist-jobs"}, {"label": "Radiologist Jobs", "url": "/category/radiologist-jobs"}]}, {"title": "Pharmacy & Allied Health", "links": [{"label": "Pharmacy Jobs", "url": "/category/pharmacy-jobs"}, {"label": "Pharmacist Jobs", "url": "/category/pharmacist-jobs"}, {"label": "Physiotherapist Jobs", "url": "/category/physiotherapist-jobs"}, {"label": "Medical Laboratory Jobs", "url": "/category/medical-laboratory-jobs"}, {"label": "Biomedical Jobs", "url": "/category/biomedical-jobs"}]}, {"title": "Healthcare Support", "links": [{"label": "Medical Coder Jobs", "url": "/category/medical-coder-jobs"}, {"label": "Insurance Coordinator Jobs", "url": "/category/insurance-coordinator-jobs"}, {"label": "Medical Insurance Jobs", "url": "/category/medical-insurance-jobs"}, {"label": "Administration Jobs", "url": "/category/administration-jobs"}, {"label": "Healthcare Assistant Jobs", "url": "/category/healthcare-assistant-jobs"}]}]}];
 
 function footerCategoriesAccordion() {
   const rowsHtml = footerGuideRows.map(row => {
@@ -137,7 +81,7 @@ export function renderSiteFooter(siteChrome = {}){
       <div class="footer-intro-cta">
         <p class="footer-intro-kicker">CAREERS ACROSS THE UAE &amp; GCC</p>
         <h2>Connect with the right opportunity.</h2>
-        <p>Discover verified roles or find qualified professionals for your growing team.</p>
+        <p>Discover healthcare roles or connect with qualified professionals for your healthcare team.</p>
         <div class="footer-intro-actions">
           <a href="/jobs">Browse Jobs</a>
           <a href="/submit-job">Post a Job</a>

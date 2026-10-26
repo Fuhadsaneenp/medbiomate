@@ -45,3 +45,7 @@ These changes follow [Google's canonicalization guidance](https://developers.goo
 - Automated checks cover source imports/page families/ad placement, routes, canonical/noindex policy, structured-data conditions, catalogue privacy, original descriptions, directory sorting/counts and admin editing.
 - HTTP smoke covers 32 route variants plus redirects, category links, pagination and sitemaps. Separate fixtures verify admin session/publish/edit/delete and candidate alert preference persistence; fixture accounts/jobs are removed afterward.
 - This run does not deploy or change the live TriKonet or Medbiomate sites. Search Console, production indexing, Rich Results Test and ad-account delivery still require the deployed site and the owner's service configuration.
+
+## Medbiomate content correction
+
+The reference layout now uses Medbiomate’s original healthcare illustration and homepage tagline. About/FAQ/contact content describes Medbiomate’s GCC healthcare focus; the inherited founders/platform-history story has been removed. Popular searches, menu categories and footer guides now focus on healthcare specialties. Static corporate employer taglines and the Bateel sample fallback are disabled; real employer names/descriptions remain sourced from the Medbiomate catalogue. The source course-enrolment promotion is replaced with medical coding career links and Medbiomate’s own contact details. `scripts/medbiomate-content.py` reapplies these corrections when the UI source is imported again.

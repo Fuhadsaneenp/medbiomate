@@ -23,7 +23,7 @@ const seed = {
   jobs:[],
   employers:[],
   posts:[],
-  pages:{about:{title:'About Us',content:'Welcome to Medbiomate! We are Konets, and this is not just a job portal—we’re your gateway to limitless career opportunities in the UAE and beyond.'}}
+  pages:{about:{title:'About Us',content:'Welcome to Medbiomate! We are Medbiomate, and this is not just a job portal—we’re yhealthcare career platform across the GCC.'}}
 };
 const store = {get(){try{return JSON.parse(localStorage.getItem('medbiomateCMS'))||structuredClone(seed)}catch{return structuredClone(seed)}},set(v){localStorage.setItem('medbiomateCMS',JSON.stringify(v))},reset(){localStorage.removeItem('medbiomateCMS');location.reload()}};
 const data=store.get();
@@ -63,18 +63,7 @@ async function loadSeoPages() {
     else if(payload.seoPage)seoPageDraft=true;
   }catch{} finally { await linksReady; }
 }
-const defaultTopCategories = [
-  { name: 'Education and Training', slug: 'education-and-training', count: 3148 },
-  { name: 'Accounting or Finance', slug: 'accounting-finance', count: 1767 },
-  { name: 'Administration', slug: 'administration', count: 1302 },
-  { name: 'HealthCare', slug: 'healthcare', count: 762 },
-  { name: 'Nurse Jobs', slug: 'nurse-jobs', count: 706 },
-  { name: 'Human Resource', slug: 'human-resource', count: 654 },
-  { name: 'Digital Marketing Jobs', slug: 'digital-marketing', count: 636 },
-  { name: 'Marketing and Sales', slug: 'marketing-and-sales', count: 627 },
-  { name: 'Customer Service Associate Jobs', slug: 'customer-service-associate-jobs', count: 231 },
-  { name: 'Engineering', slug: 'engineering', count: 179 }
-];
+const defaultTopCategories = [];
 function slugifyCategory(cat) {
   const str = (typeof cat === 'object' && cat !== null) ? (cat.slug || cat.name) : String(cat || '');
   return String(str || '')
@@ -739,7 +728,7 @@ const homeSectionClass=s=>(s&&s.className?` ${escapeAttr(s.className)}`:'');
 const homeSectionStyle=s=>{if(!s)return '';const styles=[s.background?`background:${escapeAttr(s.background)};`:'',s.textColor?`color:${escapeAttr(s.textColor)};`:''].filter(Boolean).join('');return styles?` style="${styles}"`:'';};
 const homeSectionAttrs=s=>`${homeSectionClass(s)}"${homeSectionStyle(s)}`;
 function homeHero(s={}){
-  const heroTitle = (s.title && s.title !== 'Trying to Connect') ? s.title : 'Find your next <span class="hero-title-gradient">career move</span> in the UAE';
+  const heroTitle = (s.title && s.title !== 'Trying to Connect') ? s.title : 'Get Hired for a Job <span class="hero-title-gradient">You’ll Love</span>';
 
   const liveCount = (data.counts && data.counts.job_listing) ? data.counts.job_listing : 13621;
   const formattedCount = Number(liveCount).toLocaleString() + '+';
@@ -751,14 +740,14 @@ function homeHero(s={}){
       subtitleHtml = escapeAttr(s.subtitle);
     }
   } else {
-    subtitleHtml = `Over <span class="hero-live-job-count" data-live-job-count>${formattedCount}</span> Verified Jobs Across Dubai, Abu Dhabi & the GCC`;
+    subtitleHtml = `The Middle East’s Leading Healthcare Job Search Site`;
   }
 
   return `<section class="hero-minimal">
     <div class="hero-minimal-wrap">
       <div class="hero-premium-pill">
         <span class="hero-pill-sparkle">✦</span>
-        <span>Verified Opportunities Across UAE &amp; GCC</span>
+        <span>Healthcare Opportunities Across the GCC</span>
       </div>
 
       <h1 class="hero-minimal-title">${heroTitle}</h1>
@@ -813,14 +802,14 @@ function homeHero(s={}){
         <span class="trending-label">Popular:</span>
         <a class="trending-chip" href="/jobs?q=Nurse">Nurse</a>
         <a class="trending-chip" href="/jobs?q=Doctor">Doctor</a>
-        <a class="trending-chip" href="/jobs?q=Accountant">Accountant</a>
-        <a class="trending-chip" href="/jobs?q=Software">Software</a>
-        <a class="trending-chip" href="/jobs?q=Sales">Sales</a>
-        <a class="trending-chip" href="/jobs?q=Driver">Driver</a>
+        <a class="trending-chip" href="/jobs?q=Pharmacist">Pharmacist</a>
+        <a class="trending-chip" href="/jobs?q=Medical%20Coder">Medical Coder</a>
+        <a class="trending-chip" href="/jobs?q=Physiotherapist">Physiotherapist</a>
+        <a class="trending-chip" href="/jobs?q=Lab%20Technologist">Lab Technologist</a>
       </div>
 
       <div class="hero-minimal-image-wrap">
-        <img class="hero-minimal-image" src="/source-runtime/assets/hero-team.webp" fetchpriority="high" decoding="async" alt="Medbiomate UAE Professionals Team" width="1116" height="542">
+        <img class="hero-minimal-image" src="/assets/ef24f6c52136a96fc1d3.webp" fetchpriority="high" decoding="async" alt="Medbiomate healthcare professionals" width="1330" height="2560">
       </div>
     </div>
   </section>`;
@@ -864,9 +853,9 @@ function homeCategories(s = {}) {
     <div class="wrap">
       <div class="categories-header">
         <div class="categories-header-text">
-          <span class="categories-eyebrow">BROWSE BY INDUSTRY</span>
+          <span class="categories-eyebrow">BROWSE BY SPECIALTY</span>
           <h2 class="categories-title">${escapeAttr(s.title || 'Popular Job Categories')}</h2>
-          <p class="categories-subtitle">${escapeAttr(s.subtitle || 'Explore thousands of active vacancies across top in-demand industries in the UAE')}</p>
+          <p class="categories-subtitle">${escapeAttr(s.subtitle || 'Explore healthcare opportunities across in-demand specialties in the GCC')}</p>
         </div>
         <a href="/jobs" class="categories-all-link">
           <span>Explore All Categories</span>
@@ -892,20 +881,7 @@ function homeCategories(s = {}) {
     </div>
   </section>`;
 }
-const companyTaglineMap = {
-  'gems-education': "World-class private education and international curricula across UAE.",
-  'aldar-education': "Leading educational group with British & IB curriculum schools.",
-  'nmc-healthcare': "Pioneering private healthcare and specialized clinical excellence.",
-  'american-hospital': "Mayo Clinic Network care and advanced multi-specialty services.",
-  'al-futtaim': "Conglomerate leader across automotive, retail, and real estate.",
-  'seha': "Transforming public & private clinical health services across UAE.",
-  'mediclinic': "International private hospital network operating across Dubai & GCC.",
-  'aster-dm-healthcare': "Integrated healthcare provider with world-class hospitals & clinics.",
-  'dubai-health-authority': "Delivering public health protection and patient-centered services.",
-  'adnoc': "Energy, oil & gas engineering leader driving sustainable innovation.",
-  'emirates-group': "Global aviation, airline operations, and hospitality leader.",
-  'emaar': "Iconic real estate, luxury developments, and hospitality in Dubai."
-};
+const companyTaglineMap = {};
 
 const TOP_HIRING_COMPANIES_FALLBACK = [];
 
@@ -967,7 +943,7 @@ function homeTopCompanies(s = {}) {
     `;
   }).join('');
 
-  const sectionTitle = (s.title && s.title !== 'Featured companies actively hiring') ? s.title : 'Top Companies Hiring';
+  const sectionTitle = (s.title && s.title !== 'Featured companies actively hiring') ? s.title : 'Top Healthcare Employers';
 
   return `<section class="featured-companies-section"${homeSectionAttrs(s)}>
     <div class="wrap">
@@ -998,16 +974,16 @@ function homeTopCompanies(s = {}) {
 function homeHowItWorks(s = {}) {
   const steps = [
     {
-      title: s.step1Title || 'Register an Account to Start',
-      image: s.step1Image || '/source-runtime/assets/step-1.jpg'
+      title: s.step1Title || 'Create your healthcare career profile',
+      image: s.step1Image || '/source-runtime/assets/medbiomate-step-1.svg'
     },
     {
-      title: s.step2Title || 'Explore Over Thousands of Jobs',
-      image: s.step2Image || '/source-runtime/assets/step-2.jpg'
+      title: s.step2Title || 'Explore healthcare opportunities',
+      image: s.step2Image || '/source-runtime/assets/medbiomate-step-2.svg'
     },
     {
-      title: s.step3Title || 'Find the Most Suitable Company and Job',
-      image: s.step3Image || '/source-runtime/assets/step-3.jpg'
+      title: s.step3Title || 'Connect with healthcare employers',
+      image: s.step3Image || '/source-runtime/assets/medbiomate-step-3.svg'
     }
   ];
 
@@ -1015,7 +991,7 @@ function homeHowItWorks(s = {}) {
     <div class="wrap">
       <div class="section-title">
         <h2>${escapeAttr(s.title || 'How It Works?')}</h2>
-        <p>${escapeAttr(s.subtitle || 'Job for Anyone, Anywhere')}</p>
+        <p>${escapeAttr(s.subtitle || 'Healthcare careers across the GCC')}</p>
       </div>
       <div class="how-steps-wrap">
         <div class="how-steps-track" id="howStepsTrack">
@@ -1446,7 +1422,7 @@ function jobs(){
             <span class="nurse-resume-builder-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></span>
             <span class="nurse-resume-builder-copy">
               <strong>Build your professional résumé</strong>
-              <small>Create an ATS-friendly CV tailored for UAE roles.</small>
+              <small>Create a professional CV for healthcare opportunities across the GCC.</small>
             </span>
             <span class="nurse-resume-builder-action">Build my résumé <span>→</span></span>
           </a>
@@ -1751,7 +1727,7 @@ function nurseJobsPage(){
           </div>
           <p class="nurse-side-share-txt">Know someone looking for a nurse job in the UAE?</p>
           <div class="nurse-side-share-btns">
-            <a href="https://www.linkedin.com/company/medbiomate-team" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on LinkedIn">${iconShareLinkedin} LinkedIn</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.medbiomate.com%2Fjobs" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on LinkedIn">${iconShareLinkedin} LinkedIn</a>
             <a href="https://api.whatsapp.com/send?text=${encodeURIComponent('Healthcare Nurse Jobs in UAE: https://www.medbiomate.com/nurse-jobs-in-uae')}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on WhatsApp">${iconShareWa} WhatsApp</a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://www.medbiomate.com/nurse-jobs-in-uae')}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on Facebook">${iconShareFb} Facebook</a>
             <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent('https://www.medbiomate.com/nurse-jobs-in-uae')}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on X">${iconShareX} X</a>
@@ -1795,7 +1771,7 @@ function categoryPage(destination = null, allJobs = false) {
   if (qQuery) pageTitle = `"${escapeAttr(qQuery)}" in ${escapeAttr(categoryName)}`;
   else if (selectedLoc) pageTitle = `${escapeAttr(categoryName)} Jobs in ${escapeAttr(selectedLoc)}`;
   pageTitle=destination?escapeAttr(destination.page.h1 || destination.page.title):pageTitle.replace(/Jobs Jobs/g,'Jobs');
-  if(allJobs && !cat && !qQuery && !selectedLoc)pageTitle='Jobs in UAE';
+  if(allJobs && !cat && !qQuery && !selectedLoc)pageTitle='Healthcare Jobs Across the GCC';
 
   const iconCheckTick = `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
   const iconBookmark = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>`;
@@ -1825,7 +1801,7 @@ function categoryPage(destination = null, allJobs = false) {
           <nav class="nurse-breadcrumbs" aria-label="Breadcrumb">
             <a href="/">Home</a>
             <span class="sep">&gt;</span>
-            <a href="/jobs">${allJobs && !cat ? 'Jobs in UAE' : 'Categories'}</a>
+            <a href="/jobs">${allJobs && !cat ? 'Healthcare Jobs' : 'Categories'}</a>
             ${allJobs && !cat ? '' : `<span class="sep">&gt;</span>${destination ? `<a href="/category/${escapeAttr(categoryCleanSlug)}">${escapeAttr(categoryName)}</a><span class="sep">&gt;</span><span class="current" aria-current="page">${escapeAttr(destination.page.location || 'UAE')}</span>` : `<span class="current" aria-current="page">${escapeAttr(categoryName)}</span>`}`}
           </nav>
         </div>
@@ -2050,7 +2026,7 @@ function categoryPage(destination = null, allJobs = false) {
           </div>
           <p class="nurse-side-share-txt">Know someone looking for a ${escapeAttr(categoryName)} job in the UAE?</p>
           <div class="nurse-side-share-btns">
-            <a href="https://www.linkedin.com/company/medbiomate-team" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on LinkedIn">${iconShareLinkedin} LinkedIn</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.medbiomate.com%2Fjobs" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on LinkedIn">${iconShareLinkedin} LinkedIn</a>
             <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(`${categoryName} Jobs in UAE: https://www.medbiomate.com/category/${categoryCleanSlug}`)}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on WhatsApp">${iconShareWa} WhatsApp</a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://www.medbiomate.com/category/${categoryCleanSlug}`)}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on Facebook">${iconShareFb} Facebook</a>
             <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://www.medbiomate.com/category/${categoryCleanSlug}`)}" target="_blank" rel="noopener noreferrer nofollow" class="nurse-share-pill" aria-label="Share on X">${iconShareX} X</a>
@@ -2337,7 +2313,7 @@ function employers() {
     </div>
   </main>`;
 }
-function about(){return `<main><section class="subhero"><h1>About Us</h1></section><article class="content"><h1>Welcome to Medbiomate!</h1><p>${data.pages.about.content}</p><p>Founded by two passionate friends, our journey started with Medbiomate, a successful venture focused on healthcare jobs in the GCC region. Inspired by our early success, we realized the vast potential and growing demand for diverse job opportunities across industries.</p><h2>Your Dream Jobs Are Waiting</h2><p>Our mission is to connect talent with the right opportunities, helping job seekers discover and achieve their career dreams.</p><h2>How We Work</h2><p>We source trusted opportunities, assess job quality and collaborate with companies before showcasing verified roles to job seekers.</p></article></main>`}
+function about(){return `<main><section class="subhero"><h1>About Medbiomate</h1></section><article class="content"><h2>Healthcare careers across the Middle East</h2><p>Medbiomate is a healthcare job platform connecting healthcare professionals with employers across Saudi Arabia, the UAE, Qatar, Kuwait, Oman, and Bahrain.</p><p>We focus on opportunities for doctors, nurses, pharmacists, allied health professionals, and healthcare administrative and support teams.</p><h2>Our mission</h2><p>Help healthcare professionals find relevant opportunities and make it easier for healthcare employers to reach qualified candidates across the GCC.</p><h2>How we work</h2><p>We identify healthcare vacancies, review job information, and publish opportunities with the available employer and application details. You can explore roles by specialty, company, or location and follow the application instructions on each listing.</p><h2>Your next step</h2><p>Explore healthcare jobs, compare employers, and create a professional résumé using Medbiomate’s resume builder.</p><a class="primary" href="/jobs">Explore healthcare jobs</a></article></main>`}
 function blog() {
   const initialQ = queryParams.get('q') || '';
   const initialCat = queryParams.get('category') || 'All';
@@ -2751,8 +2727,8 @@ function cleanJobExcerpt(value) {
     .replace(/\s+/g, ' ')
     .trim();
 }
-function faq(){return `<main><section class="subhero"><h1>FAQ</h1></section><div class="content faq"><h2>History Of Medbiomate</h2>${[['Who is Medbiomate?','Medbiomate is a job platform connecting job seekers with employment opportunities in the UAE and other Middle Eastern countries.'],['How The Medbiomate Started?','Medbiomate was founded after the success of Medbiomate highlighted the need for a broader job platform.'],['How are Medbiomate and Medbiomate connected?','Both platforms share founders and a commitment to connecting qualified candidates with trusted opportunities.']].map(x=>`<details><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join('')}</div></main>`}
-function contact(){return `<main><section class="subhero"><h1>Contact Us</h1></section><div class="content contact-grid"><div><h2>Get in touch</h2><p>Questions about jobs, employers or your Medbiomate account? Send us a message.</p><p><b>Email</b><br>info@medbiomate.com</p></div><form class="form-card" id="contact"><label>Name<input required></label><label>Email<input type="email" required></label><label>Message<textarea required></textarea></label><button class="primary">Send Message</button></form></div></main>`}
+function faq(){const items=[["What is Medbiomate?", "Medbiomate is a healthcare job platform connecting professionals with healthcare employers across the GCC."], ["Which countries does Medbiomate cover?", "Explore healthcare opportunities across Saudi Arabia, the United Arab Emirates, Qatar, Kuwait, Oman, and Bahrain."], ["What types of healthcare jobs are available?", "Listings include nursing, medical, pharmacy, allied health, healthcare administration, and support roles."], ["Is Medbiomate free for job seekers?", "Job seekers can browse healthcare jobs and follow the application details provided on each listing."], ["How do I apply for a job?", "Open the job listing, review its requirements, and follow the employer\u2019s application link or email instructions."], ["How can I contact Medbiomate?", "Email info@medbiomate.com or text +91 8606 799 432 for assistance."]];return `<main><section class="subhero"><h1>Frequently Asked Questions</h1></section><div class="content faq"><h2>Using Medbiomate</h2>${items.map(([question,answer])=>`<details><summary>${question}</summary><p>${answer}</p></details>`).join('')}</div></main>`}
+function contact(){return `<main><section class="subhero"><h1>Contact Us</h1></section><div class="content contact-grid"><div><h2>Get in touch</h2><p>Questions about jobs, employers or your Medbiomate account? Send us a message.</p><p><b>Email</b><br><a href="mailto:info@medbiomate.com">info@medbiomate.com</a></p><p><b>Text us</b><br><a href="https://wa.me/918606799432">+91 8606 799 432</a></p></div><form class="form-card" id="contact"><label>Name<input required></label><label>Email<input type="email" required></label><label>Message<textarea required></textarea></label><button class="primary">Send Message</button></form></div></main>`}
 function employerSignupComingSoon(){return `<main class="employer-coming-soon"><section class="employer-coming-card"><div class="employer-coming-icon" aria-hidden="true">🏢</div><span class="employer-coming-eyebrow">FOR EMPLOYERS</span><h1>Employer job posting is coming soon</h1><p>Employer registration and job posting are not open yet. We are preparing the employer portal and will launch it shortly.</p><div class="employer-coming-actions"><a class="employer-coming-primary" href="/jobs">Browse Jobs</a><a class="employer-coming-secondary" href="/contact">Contact Us</a></div><small>Thank you for your interest in hiring through Medbiomate.</small></section></main>`}
 function calculateCandidateCompletion(p) {
   if (!p || typeof p !== 'object') return 0;
@@ -3079,79 +3055,7 @@ function atsResumeBuilderPage() {
   </main>`;
 }
 
-function medicalCoderClassPage() {
-  return `<main class="service-page">
-    <section class="service-hero medical-hero">
-      <div class="wrap service-hero-inner">
-        <span class="service-badge">Healthcare Career Academy</span>
-        <h1>Medical Coder Training & Certification Class</h1>
-        <p>Master AAPC Certified Professional Coder (CPC) preparation, ICD-10-CM, CPT, and UAE insurance reimbursement guidelines with certified mentors.</p>
-        <div class="service-hero-actions">
-          <a class="primary" href="#enroll">Enroll in Next Batch</a>
-          <a class="outline" href="#curriculum">View Course Syllabus</a>
-        </div>
-      </div>
-    </section>
-    <section class="wrap service-content-section" id="curriculum">
-      <div class="service-grid-3">
-        <div class="service-feature-card">
-          <div class="sfc-icon">🩺</div>
-          <h3>ICD-10-CM & CPT Mastery</h3>
-          <p>In-depth clinical code assignment, HCPCS Level II modifiers, and diagnostic validation tailored to DOH, DHA, and MOHAP standards.</p>
-        </div>
-        <div class="service-feature-card">
-          <div class="sfc-icon">🏆</div>
-          <h3>AAPC CPC Exam Preparation</h3>
-          <p>100+ hours of rigorous live sessions, 6 mock exams, and test-taking strategies with a 94% first-attempt pass rate.</p>
-        </div>
-        <div class="service-feature-card">
-          <div class="sfc-icon">💼</div>
-          <h3>UAE Hospital Placement</h3>
-          <p>Direct placement coordination with leading UAE hospital groups, clinics, and medical coding billing centers.</p>
-        </div>
-      </div>
-
-      <div class="service-interactive-box" id="enroll">
-        <div class="sib-header">
-          <h2>Enroll in the Upcoming Batch (Weekend & Evening Available)</h2>
-          <p>Reserve your seat or speak with a senior medical coding advisor.</p>
-        </div>
-        <form class="service-form" >
-          <div class="sform-grid">
-            <label>Student Full Name
-              <input type="text" required placeholder="Your full name">
-            </label>
-            <label>Educational Background
-              <select>
-                <option>Life Sciences / Nursing / Pharmacy</option>
-                <option>Medical Graduate (MBBS / BDS / BAMS / BHMS)</option>
-                <option>Science / Non-Medical Graduate</option>
-                <option>Other / High School</option>
-              </select>
-            </label>
-            <label>Preferred Batch
-              <select>
-                <option>Weekend Batch (Sat & Sun)</option>
-                <option>Weekday Evening Batch (Mon - Thu)</option>
-                <option>Self-Paced Recorded + Live Mentorship</option>
-              </select>
-            </label>
-            <label>City / Country
-              <input type="text" required placeholder="e.g. Dubai, UAE / India / Philippines">
-            </label>
-            <label>Email Address
-              <input type="email" required placeholder="name@example.com">
-            </label>
-            <label>WhatsApp Contact
-              <input type="tel" required placeholder="+971 50 123 4567">
-            </label>
-          </div>
-          <button type="submit" class="primary service-submit-btn">Request Syllabus & Reserve Seat →</button>
-        </form>
-      </div>
-    </section>
-  </main>`;
-}
+function medicalCoderClassPage(){return `<main><section class="subhero"><h1>Medical Coding Careers</h1><p>Explore medical coding opportunities with Medbiomate.</p></section><article class="content"><h2>Find your next healthcare role</h2><p>Browse medical coder, medical billing, insurance coordination, and healthcare administration jobs across the GCC.</p><div class="employer-coming-actions"><a class="primary" href="/category/medical-coder-jobs">Browse medical coder jobs</a><a class="outline" href="/resume-library">Build your résumé</a></div><h2>Need assistance?</h2><p>Contact Medbiomate at <a href="mailto:info@medbiomate.com">info@medbiomate.com</a> or <a href="https://wa.me/918606799432">+91 8606 799 432</a>.</p></article></main>`}
 
 function getAdminAuth() {
   return getVerifiedAdmin();

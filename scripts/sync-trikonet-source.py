@@ -1,6 +1,6 @@
 """Import the supplied UI without importing its database, accounts or ad identity."""
 from pathlib import Path
-import re, shutil, sys, json, colorsys
+import re, shutil, sys, json, colorsys, runpy
 source=Path(sys.argv[1] if len(sys.argv)>1 else '/Users/fuhadsaneenpk/My Works/Trikonet/frontend')
 root=Path(__file__).resolve().parents[1]
 out=root/'public/source-runtime';out.mkdir(exist_ok=True)
@@ -163,6 +163,7 @@ ads.write_text(adtext)
 .brand img,.footer-logo img,.footer-brand-logo{object-fit:contain}
 .preloader-static-logo{display:block!important}\n.emp-top-hiring-head h1{font-size:22px;line-height:1.3;margin:8px 0 0;font-weight:700;color:#fff}
 ''')
+runpy.run_path(str(root/'scripts/medbiomate-content.py'))
 for generated in out.iterdir():
  if generated.suffix in ['.js','.css','.html']:generated.write_text('\n'.join(line.rstrip() for line in generated.read_text().splitlines())+'\n')
 (root/'docs/source-import.json').write_text(json.dumps({'source':str(source),'files':files,'liveReference':{'checked':'2026-10-26','appVersion':'20261022-work-credit-16','adsVersion':'20261021-pagination','listingAdsAfter':[5,10],'jobDetailExtraSlotsRemoved':True},'brand':'Medbiomate','primary':'#0066ff','preservedException':'Homepage articles removed at user request','data':'Existing Medbiomate catalogue and account backend; no source accounts imported'},indent=2)+'\n')

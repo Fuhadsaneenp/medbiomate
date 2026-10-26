@@ -3,3 +3,8 @@
 .brand img,.footer-logo img,.footer-brand-logo{object-fit:contain}
 .preloader-static-logo{display:block!important}
 .emp-top-hiring-head h1{font-size:22px;line-height:1.3;margin:8px 0 0;font-weight:700;color:#fff}
+
+/* Original Medbiomate illustration is a tall asset; show its healthcare team without the empty area. */
+.hero-minimal-image-wrap{width:min(560px,100%);height:230px;margin:30px auto 0;overflow:hidden;position:relative}
+.hero-minimal-image-wrap .hero-minimal-image{position:absolute;display:block;width:560px!important;max-width:none!important;height:auto!important;max-height:none!important;left:50%;bottom:-90px;transform:translateX(-50%);margin:0!important;filter:brightness(1.065)}
+@media(max-width:600px){.hero-minimal-image-wrap{height:190px}.hero-minimal-image-wrap .hero-minimal-image{width:420px!important;bottom:-68px}}

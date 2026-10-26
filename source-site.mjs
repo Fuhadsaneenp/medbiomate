@@ -50,7 +50,7 @@ export async function sourcePage(root,url,backendPort){
   const group=path.split('/')[1],slug=path.split('/')[2],tax=await api('wp/taxonomies'),term=tax?.[group==='category'?'categories':group==='job-location'?'locations':'types']?.find(r=>r.slug===slug);
   if(term){title=group==='job-location'?`Healthcare Jobs in ${term.name}`:`${term.name} Opportunities`;description=`Browse ${title.toLowerCase()} on Medbiomate. Explore vacancies, hiring employers and application details.`;}
  }else if(resume.test(path)){title='Resume Library & CV Builder';description='Create, edit and export a professional resume with the Medbiomate resume builder and template library.';}
- else if(['/medical-coder-class','/services/medical-coder-class'].includes(path)){title='Medical Coding Training';description='Explore medical coding training and career information on Medbiomate.';}
+ else if(['/medical-coder-class','/services/medical-coder-class'].includes(path)){title='Medical Coding Careers';description='Explore medical coding jobs, healthcare career information and resume tools on Medbiomate.';}
  else if(path==='/job-locations'){title='Healthcare Jobs by Location';description='Browse healthcare jobs by city and country across the UAE and GCC.';const tax=await api('wp/taxonomies');record={title:{rendered:title},content:{rendered:'<ul>'+(tax?.locations||[]).filter(t=>t.count>0).map(t=>`<li><a href="/job-location/${esc(t.slug)}">${esc(t.name)}</a></li>`).join('')+'</ul>'}};type='cms';embedded+=`<script id="public-page-data" type="application/json">${json(record)}</script>`;}
  else if(known[path]) [title,description]=known[path];
  else {

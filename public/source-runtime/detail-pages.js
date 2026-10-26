@@ -274,7 +274,7 @@ function renderAboutCompanySection(employer, company, logo, location, jobEmploye
     ? (hasEmpHtml ? empDesc : (empDesc ? empDesc.split(/\n\s*\n/).map(p => `<p>${esc(p).replaceAll('\n', '<br>')}</p>`).join('') : ''))
     : employer?.content?.rendered || '';
 
-  const cleanBio = rawContent || `<p>${esc(compName)} is a leading employer operating across the UAE and GCC region, providing top-tier professional career opportunities, modern workplace culture, and continuous development for talent.</p>`;
+  const cleanBio = rawContent || `<p>${esc(compName)} has a company profile on Medbiomate. Explore the available healthcare opportunities and employer information below.</p>`;
   const socialsHtml = formatSocialLinks(employer?.socials);
 
   return `
@@ -412,7 +412,7 @@ export function renderJobDetail(record, employer, path, orgJobs = [], relatedJob
   const type = record.local ? (record.types || []).join(', ') : values(m._job_type) || record.type || '';
   const date = resolveJobDate(record);
   const expiry = resolveJobDeadline(record);
-  const isBateel = record.slug === 'bateel-international' || employer?.slug === 'bateel-international';
+  const isBateel = false;
   const logo = record.logo || m._job_logo || employer?.logo || employer?.metas?._employer_logo || employer?.metas?._employer_featured_image_img || employer?.metas?._employer_featured_image || (isBateel ? '/source-runtime/assets/bateel.jpg' : '');
   const employerPath = resolveEmployerProfile(employer, record.employerUrl || m._job_employer_url, company);
   const desc = record.description || '';
@@ -630,7 +630,7 @@ export function renderEmployerDetail(record, path, jobs = []) {
   const title = formatCompanyName(decode(record.title?.rendered || record.title || ''));
   const category = record.local ? (record.categories || []).join(', ') : values(m._employer_category);
   const location = record.local ? (record.locations || []).join(', ') : values(m._employer_location);
-  const isBateel = record.slug === 'bateel-international';
+  const isBateel = false;
   const logo = record.logo || m._employer_logo || (isBateel ? '/source-runtime/assets/bateel.jpg' : '');
   const phoneRaw = record.phone || record.mobile || m._employer_phone || m._employer_mobile || m._company_phone || '';
   const phone = Array.isArray(phoneRaw) ? String(phoneRaw[0] || '').trim() : String(phoneRaw || '').trim();
@@ -699,7 +699,7 @@ export function renderEmployerDetail(record, path, jobs = []) {
     ? (hasEmpHtml ? empDesc : (empDesc ? empDesc.split(/\n\s*\n/).map(p => `<p>${esc(p).replaceAll('\n', '<br>')}</p>`).join('') : ''))
     : record.content?.rendered || '';
 
-  const cleanBio = rawContent || `<p>${esc(title)} is a leading employer operating across the UAE and GCC region, providing top-tier professional career opportunities, modern workplace culture, and continuous development for talent.</p>`;
+  const cleanBio = rawContent || `<p>${esc(title)} has a company profile on Medbiomate. Explore the available healthcare opportunities and employer information below.</p>`;
 
   // Extract primary company category
   let companyCategory = '';

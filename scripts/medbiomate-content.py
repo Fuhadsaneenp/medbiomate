@@ -85,3 +85,15 @@ for i,paths in enumerate(icons,1):
  name=f'medbiomate-step-{i}.svg';(out/'assets'/name).write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>')
  s=s.replace(f'/source-runtime/assets/step-{i}.jpg',f'/source-runtime/assets/{name}')
 p.write_text(s)
+
+p=out/'location-tree.js';p.write_text((out.parent/'location-tree.js').read_text())
+p=out/'app.js';s=p.read_text();s="import {locationTree} from './location-tree.js';\n"+s
+a=s.index('export function sortUaeLocations(items) {');b=s.index('\nconst defaultLocations',a);s=s[:a]+'export function sortUaeLocations(items){return locationTree(items);}\n'+s[b:]
+a=s.index('const defaultLocations = [');b=s.index('];',a)+2;s=s[:a]+'const defaultLocations = [];'+s[b:]
+s=s.replace('return { name: val, label: val };',"return { name: val, label: val, depth:item.depth||0, country:item.isCountry };")
+s=s.replace('data-value="${escapeAttr(opt.name)}" role="option"','data-value="${escapeAttr(opt.name)}" style="padding-left:${14+(opt.depth||0)*18}px" data-country="${opt.country?\'true\':\'false\'}" role="option"')
+p.write_text(s)
+p=out/'medbiomate-brand.css';p.write_text(p.read_text()+'\n.custom-select-option[data-country="true"]{font-weight:700;border-top:1px solid #e2e8f0;margin-top:5px;color:#0f172a}.custom-select-list{max-height:360px;overflow-y:auto}\n')
+
+p=out/'site-footer.js';s=p.read_text().replace('alt="Medbiomate">','class="medbiomate-footer-logo" alt="Medbiomate">');p.write_text(s)
+p=out/'medbiomate-brand.css';p.write_text(p.read_text()+'\n.site-footer-standard .medbiomate-footer-logo{filter:brightness(0) invert(1);opacity:1;object-fit:contain}\n')

@@ -75,7 +75,7 @@ export function renderSiteFooter(siteChrome = {}){
   return `<footer class="footer site-footer-columns site-footer-standard" style="background:#202124;color:#ffffff">
     <div class="wrap footer-grid">
       <div>
-        <img src="${escapeAttr(siteChrome.footerLogo || '/source-runtime/assets/logo-white.png')}" alt="Medbiomate">
+        <img src="${escapeAttr(siteChrome.footerLogo || '/source-runtime/assets/logo-white.png')}" class="medbiomate-footer-logo" alt="Medbiomate">
         <p>${escapeAttr(siteChrome.footerEmail||'info@medbiomate.com')}</p>
       </div>
       <div class="footer-intro-cta">

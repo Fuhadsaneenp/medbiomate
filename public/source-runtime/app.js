@@ -1,3 +1,4 @@
+import {locationTree} from './location-tree.js';
 const serverRouteTitle=document.title;
 import { protectJobNavigation } from './job-navigation.js';
 import { loadContentRecord } from './content-record.js';
@@ -253,31 +254,9 @@ const UAE_CANONICAL_ORDER = [
   'al ain'
 ];
 
-export function sortUaeLocations(items) {
-  if (!Array.isArray(items)) return [];
-  return [...items].sort((a, b) => {
-    const nameA = String((a && (a.name || a.title)) || a || '').trim().toLowerCase();
-    const nameB = String((b && (b.name || b.title)) || b || '').trim().toLowerCase();
-    const indexA = UAE_CANONICAL_ORDER.indexOf(nameA);
-    const indexB = UAE_CANONICAL_ORDER.indexOf(nameB);
-    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-    if (indexA !== -1) return -1;
-    if (indexB !== -1) return 1;
-    return nameA.localeCompare(nameB);
-  });
-}
+export function sortUaeLocations(items){return locationTree(items);}
 
-const defaultLocations = [
-  { id: 258, name: 'UAE', slug: 'uae', count: 4833 },
-  { id: 259, name: 'Abu Dhabi', slug: 'abu-dhabi', count: 3422 },
-  { id: 260, name: 'Dubai', slug: 'dubai', count: 6252 },
-  { id: 261, name: 'Sharjah', slug: 'sharjah-uae', count: 819 },
-  { id: 262, name: 'Ajman', slug: 'ajman', count: 389 },
-  { id: 263, name: 'Umm Al Quwain', slug: 'umm-al-quwain-uae', count: 17 },
-  { id: 264, name: 'Ras Al Khaimah', slug: 'ras-al-khaimah', count: 229 },
-  { id: 265, name: 'Fujairah', slug: 'fujairah', count: 37 },
-  { id: 843, name: 'Al Ain', slug: 'al-ain', count: 333 }
-];
+const defaultLocations = [];
 
 data.counts={job_listing:0,employer:0,post:0};
 data.taxonomies={types:[],categories:[...defaultTopCategories],locations:[...defaultLocations],tags:[],employerCategories:[],employerLocations:[]};
@@ -700,11 +679,11 @@ function customSelect(name, items, defaultLabel, selectedValue) {
     { name: '', label: defaultLabel },
     ...list.map(item => {
       const val = typeof item === 'object' && item !== null ? item.name : item;
-      return { name: val, label: val };
+      return { name: val, label: val, depth:item.depth||0, country:item.isCountry };
     })
   ].map(opt => {
     const isSelected = opt.name === currentVal;
-    return `<li class="custom-select-option${isSelected ? ' selected' : ''}" data-value="${escapeAttr(opt.name)}" role="option" aria-selected="${isSelected ? 'true' : 'false'}">
+    return `<li class="custom-select-option${isSelected ? ' selected' : ''}" data-value="${escapeAttr(opt.name)}" style="padding-left:${14+(opt.depth||0)*18}px" data-country="${opt.country?'true':'false'}" role="option" aria-selected="${isSelected ? 'true' : 'false'}">
       <span>${escapeAttr(opt.label)}</span>
       ${isSelected ? `<svg class="custom-select-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>` : ''}
     </li>`;

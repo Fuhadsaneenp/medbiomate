@@ -8,3 +8,7 @@
 .hero-minimal-image-wrap{width:min(560px,100%);height:230px;margin:30px auto 0;overflow:hidden;position:relative}
 .hero-minimal-image-wrap .hero-minimal-image{position:absolute;display:block;width:560px!important;max-width:none!important;height:auto!important;max-height:none!important;left:50%;bottom:-90px;transform:translateX(-50%);margin:0!important;filter:brightness(1.065)}
 @media(max-width:600px){.hero-minimal-image-wrap{height:190px}.hero-minimal-image-wrap .hero-minimal-image{width:420px!important;bottom:-68px}}
+
+.custom-select-option[data-country="true"]{font-weight:700;border-top:1px solid #e2e8f0;margin-top:5px;color:#0f172a}.custom-select-list{max-height:360px;overflow-y:auto}
+
+.site-footer-standard .medbiomate-footer-logo{filter:brightness(0) invert(1);opacity:1;object-fit:contain}

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {locationTree,locationNames} from '../public/location-tree.js';
+const rows=[{id:2,name:'Dubai',parent:1},{id:4,name:'Riyadh',parent:3},{id:1,name:'United Arab Emirates',parent:0},{id:3,name:'Saudi Arabia',parent:0},{id:5,name:'Abu Dhabi',parent:1},{id:6,name:'Al Ain',parent:5}];
+test('countries contain their regions and nested cities in order',()=>{assert.deepEqual(locationTree(rows).map(r=>[r.name,r.depth]),[['United Arab Emirates',0],['Abu Dhabi',1],['Al Ain',2],['Dubai',1],['Saudi Arabia',0],['Riyadh',1]]);});
+test('country and region filters include descendants without crossing borders',()=>{assert.deepEqual(locationNames(rows,'UAE'),['United Arab Emirates','Abu Dhabi','Al Ain','Dubai']);assert.deepEqual(locationNames(rows,'Abu Dhabi'),['Abu Dhabi','Al Ain']);assert.deepEqual(locationNames(rows,'Saudi Arabia'),['Saudi Arabia','Riyadh']);});

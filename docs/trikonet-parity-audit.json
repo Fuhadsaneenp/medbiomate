@@ -38,11 +38,26 @@
   "missingAdminViews": [],
   "extraAdminViews": [],
   "jobDetailTemplateSimilarity": 0.9863,
-  "visualVerification": "Unavailable this pass: browser access disabled in Work settings",
+  "visualVerification": "Desktop homepage, jobs/detail, employer directory and resume template chooser inspected; 375px employer layout checked without document overflow. Browser access disabled before tablet and remaining state checks.",
   "adminScriptSourceMatchIgnoringBrand": false,
   "adminScriptFixes": "Explicit named form controls prevent native title-property collision; job-specific Edit routes",
   "adminStylesSourceMatchIgnoringBrand": true,
   "sourceJobListingTemplate": "Adapted original categoryPage function and its listing CSS",
   "sourceAdminLoginTemplate": "Original adminLoginPage markup and CSS, Medbiomate brand, existing server authentication",
-  "resumeTools": "Original cvBuilder.js, stylesheet and plugin assets; Medbiomate brand and same-origin APIs"
+  "resumeTools": "Original cvBuilder.js, stylesheet and plugin assets; Medbiomate brand and same-origin APIs",
+  "publicRuntime": "49 adapted modules/styles from supplied source, served through source-site.mjs",
+  "liveReference": {
+    "date": "2026-10-26",
+    "app": "20261022-work-credit-16",
+    "ads": "20261021-pagination",
+    "changes": [
+      "Listing ads after cards 5 and 10",
+      "Remove supplemental feed/company detail ad calls"
+    ]
+  },
+  "validation": {
+    "unitTestsPassed": 25,
+    "httpRouteVariantsPassed": 32,
+    "adminAndCandidateFixtures": "Passed and removed"
+  }
 }

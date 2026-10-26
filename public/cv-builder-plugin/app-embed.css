@@ -3,8 +3,8 @@
   --cv-accent-strong: #900006 !important;
   --cv-accent-soft: rgba(176, 0, 8, .06) !important;
   --cv-accent-glow: rgba(176, 0, 8, .16) !important;
-  --cv-accent: #b00008 !important;
-  --cv-gradient: linear-gradient(135deg, #b00008 0%, #900006 100%) !important;
+  --cv-accent: #0066ff !important;
+  --cv-gradient: linear-gradient(135deg, #0066ff 0%, #900006 100%) !important;
   --cv-shadow-glow: 0 10px 24px rgba(176, 0, 8, .22) !important;
   --cv-ink: #14213d !important;
   --cv-line: #e3e8f1 !important;
@@ -121,7 +121,7 @@
     border: 1px solid #c8daf0 !important;
     border-radius: 14px !important;
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font: 800 12px/1 'DM Sans', sans-serif !important;
     box-shadow: 0 4px 12px rgba(31, 55, 97, .07) !important;
     touch-action: manipulation !important;
@@ -789,7 +789,7 @@ body.cv-download-page-mode .cv-workspace-body {
   .cv-export-hero>span {
     display: block;
     margin: 0 0 7px;
-    color: #b00008;
+    color: #0066ff;
     font: 800 8px/1 'DM Sans', sans-serif;
     letter-spacing: .13em
   }
@@ -835,7 +835,7 @@ body.cv-download-page-mode .cv-workspace-body {
     width: 18px;
     height: 18px;
     fill: none;
-    stroke: #b00008;
+    stroke: #0066ff;
     stroke-width: 1.8
   }
 
@@ -848,7 +848,7 @@ body.cv-download-page-mode .cv-workspace-body {
     padding: 5px 8px;
     border-radius: 9px;
     background: #eef5ff;
-    color: #b00008;
+    color: #0066ff;
     font: 700 8px/1 'DM Sans', sans-serif
   }
 
@@ -901,7 +901,7 @@ body.cv-download-page-mode .cv-workspace-body {
 
   .cv-export-format:hover,
   .cv-export-format:focus-visible {
-    border-color: #b00008;
+    border-color: #0066ff;
     outline: 0;
     box-shadow: 0 9px 23px rgba(176, 0, 8, .1)
   }
@@ -915,7 +915,7 @@ body.cv-download-page-mode .cv-workspace-body {
     padding: 0 6px;
     border-radius: 12px;
     background: #e8f1ff;
-    color: #b00008;
+    color: #0066ff;
     font: 800 9px/1 'DM Sans', sans-serif;
     box-sizing: border-box
   }
@@ -965,12 +965,12 @@ body.cv-download-page-mode .cv-workspace-body {
 
   .cv-export-format-pdf em {
     background: #e8f1ff;
-    color: #b00008
+    color: #0066ff
   }
 
   .cv-export-format.is-preparing {
     pointer-events: none;
-    border-color: #b00008;
+    border-color: #0066ff;
     background: #f4f8ff
   }
 
@@ -982,7 +982,7 @@ body.cv-download-page-mode .cv-workspace-body {
     place-items: center;
     border-radius: 18px;
     background: rgba(255, 255, 255, .91);
-    color: #b00008;
+    color: #0066ff;
     font: 800 10px/1 'DM Sans', sans-serif
   }
 
@@ -1167,7 +1167,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     border: 0 !important;
     border-radius: 13px !important;
     background: #edf5ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     cursor: pointer !important;
     transition: transform .16s ease, background .16s ease, box-shadow .16s ease !important
   }
@@ -1183,7 +1183,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
 
   #cv-builder-workspace .cv-workspace-pagination-bar .cv-pagination-btn:hover:not(:disabled) {
     transform: translateY(-1px) !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 7px 16px rgba(176, 0, 8, .24) !important
   }
@@ -1253,7 +1253,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
 
   .cv-topbar-tab-btn.is-active {
     background: #e8f1ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: none !important
   }
 
@@ -1316,7 +1316,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     width: 36px !important;
     height: 36px !important;
     background: #e8f1ff !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-dash-contact-card-content {
@@ -1406,8 +1406,8 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
   }
 
   .cv-customizer-menu-item.is-active {
-    border-color: #b00008 !important;
-    background: #b00008 !important;
+    border-color: #0066ff !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 7px 16px rgba(176, 0, 8, .16) !important
   }
@@ -1568,7 +1568,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
   }
 
   .cv-choice-card.is-selected {
-    border: 1.5px solid #b00008 !important;
+    border: 1.5px solid #0066ff !important;
     background: linear-gradient(135deg, #eaf3ff, #f7faff) !important;
     box-shadow: 0 10px 25px rgba(176, 0, 8, .12) !important
   }
@@ -1579,7 +1579,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     border: 0 !important;
     border-radius: 17px !important;
     background: #eef4fc !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-choice-card:first-child .cv-choice-icon-wrap {
@@ -1621,7 +1621,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     border: 0 !important;
     border-radius: 7px !important;
     background: #e8f1ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font-size: 7px !important;
     font-weight: 800 !important;
     letter-spacing: .06em !important;
@@ -1642,7 +1642,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
   }
 
   .cv-choice-card.is-selected .cv-choice-arrow {
-    background: #b00008;
+    background: #0066ff;
     color: #fff
   }
 
@@ -1854,7 +1854,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     border: 0 !important;
     border-radius: 15px !important;
     background: #fff1f2 !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: none !important;
     font-size: 10px !important
   }
@@ -1874,7 +1874,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
   .cv-mobile-action-dock .cv-dash-add-content-btn {
     min-height: 56px !important;
     border-radius: 15px !important;
-    background: linear-gradient(135deg, #b00008, #d51b23) !important;
+    background: linear-gradient(135deg, #0066ff, #d51b23) !important;
     box-shadow: 0 8px 18px rgba(176, 0, 8, .22), inset 0 1px 0 rgba(255, 255, 255, .24) !important
   }
 
@@ -1959,7 +1959,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
   }
 
   .cv-workspace-tpl-card.is-active {
-    border: 2px solid #b00008 !important;
+    border: 2px solid #0066ff !important;
     padding: 5px 5px 10px !important;
     background: #f5f9ff !important;
     box-shadow: 0 9px 23px rgba(176, 0, 8, .13) !important
@@ -2021,7 +2021,7 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
     place-items: center !important;
     border: 2px solid #fff !important;
     border-radius: 9px !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     font: 800 12px/1 'DM Sans', sans-serif !important;
     box-shadow: 0 5px 12px rgba(176, 0, 8, .25) !important
@@ -2106,8 +2106,8 @@ body::-webkit-scrollbar,
 
 .cv-app-mobile-nav .cv-app-nav-next {
   justify-self: stretch;
-  border-color: #b00008;
-  background: #b00008;
+  border-color: #0066ff;
+  background: #0066ff;
   color: #fff;
   box-shadow: 0 8px 18px rgba(176, 0, 8, .2)
 }
@@ -2185,7 +2185,7 @@ body::-webkit-scrollbar,
 
 .cv-choice-card.is-selected {
   background: #e8f1ff !important;
-  border: 1.5px solid #b00008 !important;
+  border: 1.5px solid #0066ff !important;
   box-shadow: 0 10px 24px rgba(176, 0, 8, .1) !important
 }
 
@@ -2198,8 +2198,8 @@ body::-webkit-scrollbar,
 }
 
 .cv-choice-card.is-selected .cv-choice-icon-wrap {
-  background: #b00008 !important;
-  border-color: #b00008 !important
+  background: #0066ff !important;
+  border-color: #0066ff !important
 }
 
 .cv-choice-icon-wrap svg {
@@ -2222,7 +2222,7 @@ body::-webkit-scrollbar,
 .cv-choice-badge {
   top: -10px !important;
   right: 14px !important;
-  background: #b00008 !important;
+  background: #0066ff !important;
   padding: 4px 9px !important;
   font-size: 8px !important;
   box-shadow: 0 7px 16px rgba(176, 0, 8, .2) !important
@@ -2255,7 +2255,7 @@ body::-webkit-scrollbar,
 }
 
 .cv-btn-continue {
-  background: #b00008 !important;
+  background: #0066ff !important;
   box-shadow: 0 10px 22px rgba(176, 0, 8, .22) !important;
   min-width: 150px !important
 }
@@ -2291,8 +2291,8 @@ body::-webkit-scrollbar,
 .cv-goal-card.is-selected,
 .cv-industry-pill.is-selected {
   background: #e8f1ff !important;
-  border-color: #b00008 !important;
-  color: #b00008 !important
+  border-color: #0066ff !important;
+  color: #0066ff !important
 }
 
 .cv-step-templates .cv-onboarding-container {
@@ -2302,14 +2302,14 @@ body::-webkit-scrollbar,
 
 .cv-template-select-card.is-selected,
 .cv-template-select-card:hover {
-  border-color: #b00008 !important;
+  border-color: #0066ff !important;
   box-shadow: 0 10px 24px rgba(176, 0, 8, .12) !important
 }
 
 .cv-template-select-card .cv-template-use-btn,
 .cv-modal-use-btn,
 .cv-workspace-next-btn {
-  background: #b00008 !important
+  background: #0066ff !important
 }
 
 @media(max-width:520px) {
@@ -2596,7 +2596,7 @@ body::-webkit-scrollbar,
     border-radius: 999px !important;
     font: 700 10px/1 'DM Sans', sans-serif !important;
     background: #e9f2ff !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-modal-right h2 {
@@ -2632,7 +2632,7 @@ body::-webkit-scrollbar,
   }
 
   .cv-modal-tick polyline {
-    stroke: #b00008 !important
+    stroke: #0066ff !important
   }
 
   .cv-modal-use-btn {
@@ -2642,7 +2642,7 @@ body::-webkit-scrollbar,
     margin: 0 !important;
     padding: 14px !important;
     border-radius: 16px !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     font: 700 14px/1 'DM Sans', sans-serif !important;
     box-shadow: 0 10px 22px rgba(176, 0, 8, .22) !important
@@ -2721,7 +2721,7 @@ body::-webkit-scrollbar,
 
   .cv-mobile-view-toggle button.is-active {
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: 0 3px 10px rgba(31, 55, 97, .1) !important
   }
 
@@ -2862,7 +2862,7 @@ body::-webkit-scrollbar,
     padding: 12px 20px !important;
     border: 1px solid rgba(176, 0, 8, .16) !important;
     border-radius: 16px !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 10px 24px rgba(176, 0, 8, .2), inset 0 1px 0 rgba(255, 255, 255, .22) !important;
     font: 700 14px 'DM Sans', sans-serif !important
@@ -2880,7 +2880,7 @@ body::-webkit-scrollbar,
 
   .cv-mobile-preview-action.is-previewing {
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     border-color: #cbdcf5 !important;
     box-shadow: 0 8px 20px rgba(31, 55, 97, .1) !important
   }
@@ -2894,7 +2894,7 @@ body::-webkit-scrollbar,
     padding: 8px 16px !important;
     border-radius: 999px !important;
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     border-color: #cbdcf5 !important;
     box-shadow: 0 5px 14px rgba(31, 55, 97, .08) !important;
     font-size: 12px !important
@@ -2955,7 +2955,7 @@ body::-webkit-scrollbar,
 
   .cv-topbar-tab-btn.is-active {
     background: #e8f1ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: none !important
   }
 
@@ -3019,7 +3019,7 @@ body::-webkit-scrollbar,
     width: 36px !important;
     height: 36px !important;
     background: #e8f1ff !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-dash-contact-card-content {
@@ -3106,8 +3106,8 @@ body::-webkit-scrollbar,
   }
 
   .cv-customizer-menu-item.is-active {
-    border-color: #b00008 !important;
-    background: #b00008 !important;
+    border-color: #0066ff !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 7px 16px rgba(176, 0, 8, .16) !important
   }
@@ -3213,7 +3213,7 @@ body::-webkit-scrollbar,
   .cv-content-dashboard-intro span {
     display: block;
     margin-bottom: 4px;
-    color: #b00008;
+    color: #0066ff;
     font: 800 8px/1 'DM Sans', sans-serif;
     letter-spacing: .13em;
     text-transform: uppercase
@@ -3271,7 +3271,7 @@ body::-webkit-scrollbar,
     border: 0 !important;
     border-radius: 13px !important;
     background: #eef4fc !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-dash-edit-btn svg {
@@ -3345,7 +3345,7 @@ body::-webkit-scrollbar,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     flex-shrink: 0 !important
   }
 
@@ -3434,7 +3434,7 @@ body::-webkit-scrollbar,
     padding: 0 18px !important;
     border: 0 !important;
     border-radius: 15px !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 9px 20px rgba(176, 0, 8, .2) !important;
     font: 800 13px/1 'DM Sans', sans-serif !important
@@ -3629,7 +3629,7 @@ body::-webkit-scrollbar,
   .cv-workspace-form-section input:focus,
   .cv-workspace-form-section select:focus,
   .cv-workspace-form-section textarea:focus {
-    border-color: #b00008 !important;
+    border-color: #0066ff !important;
     outline: 3px solid rgba(176, 0, 8, .1) !important
   }
 
@@ -3665,7 +3665,7 @@ body::-webkit-scrollbar,
     border: 0 !important;
     border-radius: 10px !important;
     background: #edf4ff !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-rich-editor {
@@ -3822,7 +3822,7 @@ body::-webkit-scrollbar,
 
   .cv-workspace-next-btn {
     border: 0 !important;
-    background: #b00008 !important;
+    background: #0066ff !important;
     color: #fff !important;
     box-shadow: 0 8px 18px rgba(176, 0, 8, .18) !important
   }
@@ -3834,7 +3834,7 @@ body::-webkit-scrollbar,
     border: 1px dashed #a9c8ef !important;
     border-radius: 13px !important;
     background: #f4f8ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font-size: 11px !important;
     font-weight: 800 !important
   }
@@ -3944,7 +3944,7 @@ body::-webkit-scrollbar,
     border: 1px solid #cfe0f7 !important;
     border-radius: 12px !important;
     background: #edf5ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font-size: 10px !important;
     font-weight: 800 !important
   }
@@ -4007,7 +4007,7 @@ body::-webkit-scrollbar,
     transform: translateY(-50%);
     border-radius: 11px;
     background: #e7f1ff;
-    color: #b00008;
+    color: #0066ff;
     font-size: 17px;
     font-weight: 700
   }
@@ -4302,7 +4302,7 @@ body::-webkit-scrollbar,
     border: 1px solid #d7e7ff !important;
     border-radius: 999px !important;
     background: #eef5ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font-size: 8px !important;
     font-weight: 700 !important;
     letter-spacing: .01em !important
@@ -4378,7 +4378,7 @@ body::-webkit-scrollbar,
     margin: 2px 0 0 !important;
     border: 0 !important;
     border-radius: 12px !important;
-    background: linear-gradient(180deg, #2478e8 0%, #b00008 100%) !important;
+    background: linear-gradient(180deg, #2478e8 0%, #0066ff 100%) !important;
     color: #fff !important;
     font-size: 13.5px !important;
     font-weight: 700 !important;
@@ -4487,7 +4487,7 @@ body::-webkit-scrollbar,
   }
 
   .cv-choice-card.is-selected {
-    border: 1.5px solid #b00008 !important;
+    border: 1.5px solid #0066ff !important;
     background: linear-gradient(135deg, #eaf3ff, #f7faff) !important;
     box-shadow: 0 10px 25px rgba(176, 0, 8, .12) !important
   }
@@ -4498,7 +4498,7 @@ body::-webkit-scrollbar,
     border: 0 !important;
     border-radius: 17px !important;
     background: #eef4fc !important;
-    color: #b00008 !important
+    color: #0066ff !important
   }
 
   .cv-choice-card:first-child .cv-choice-icon-wrap {
@@ -4541,7 +4541,7 @@ body::-webkit-scrollbar,
     border: 0 !important;
     border-radius: 7px !important;
     background: #e8f1ff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font-size: 7px !important;
     font-weight: 800 !important;
     letter-spacing: .06em !important;
@@ -4562,7 +4562,7 @@ body::-webkit-scrollbar,
   }
 
   .cv-choice-card.is-selected .cv-choice-arrow {
-    background: #b00008;
+    background: #0066ff;
     color: #fff
   }
 
@@ -4665,7 +4665,7 @@ body::-webkit-scrollbar,
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  color: #b00008 !important;
+  color: #0066ff !important;
   flex-shrink: 0 !important;
 }
 
@@ -4738,7 +4738,7 @@ body::-webkit-scrollbar,
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
-  color: #b00008 !important;
+  color: #0066ff !important;
   cursor: pointer !important;
 }
 
@@ -4889,7 +4889,7 @@ body::-webkit-scrollbar,
 }
 
 .cv-dash-heading-column-select:focus {
-  border-color: #b00008 !important;
+  border-color: #0066ff !important;
   box-shadow: 0 0 0 3px rgba(176, 0, 8, 0.12) !important;
 }
 
@@ -5067,7 +5067,7 @@ body::-webkit-scrollbar,
   background: #f8fafc !important;
   border: 1.5px dashed #cbd5e1 !important;
   border-radius: 12px !important;
-  color: #b00008 !important;
+  color: #0066ff !important;
   font-size: 13px !important;
   font-weight: 650 !important;
   cursor: pointer !important;
@@ -5146,14 +5146,14 @@ body::-webkit-scrollbar,
 }
 
 .cv-dash-heading-editor-row input:focus {
-  border-color: #b00008 !important;
+  border-color: #0066ff !important;
   outline: none !important;
   box-shadow: 0 0 0 3px rgba(176, 0, 8, 0.12) !important;
 }
 
 .cv-dash-heading-editor-close-btn {
   align-self: flex-end !important;
-  background: #b00008 !important;
+  background: #0066ff !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 8px !important;
@@ -5169,7 +5169,7 @@ body::-webkit-scrollbar,
 }
 
 .cv-style-save-controls{display:flex;flex-wrap:wrap;gap:8px;padding:16px;margin-bottom:12px;background:#fff;border:1px solid #dce6f2;border-radius:16px}
-.cv-style-save-controls button{flex:1;min-height:44px;padding:10px 12px;border:1px solid #c9ddf7;border-radius:12px;background:#eff6ff;color:#b00008;font:600 13px 'DM Sans',sans-serif;cursor:pointer}
+.cv-style-save-controls button{flex:1;min-height:44px;padding:10px 12px;border:1px solid #c9ddf7;border-radius:12px;background:#eff6ff;color:#0066ff;font:600 13px 'DM Sans',sans-serif;cursor:pointer}
 .cv-style-save-controls button:first-child{background:#087cf0;border-color:#087cf0;color:white}
 .cv-style-save-controls p{flex-basis:100%;margin:4px 0 0;color:#61738b;font-size:12px;line-height:1.5}
 /* Use the same body rhythm for paragraphs and rich-text bullet lists. */
@@ -6059,7 +6059,7 @@ body::-webkit-scrollbar,
     border: 1px solid #cbdcf2 !important;
     border-radius: 13px !important;
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font: 800 12px/1 'DM Sans', sans-serif !important;
     box-shadow: 0 4px 12px rgba(31, 55, 97, .07) !important;
   }
@@ -6169,7 +6169,7 @@ body::-webkit-scrollbar,
     border: 1px solid #cfdded !important;
     border-radius: 13px !important;
     background: #fff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     font: 800 11px/1 'DM Sans',sans-serif !important;
   }
   .cv-preview-popup-back svg { width: 17px !important; height: 17px !important; fill: none !important; stroke: currentColor !important; stroke-width: 2 !important; }
@@ -6178,7 +6178,7 @@ body::-webkit-scrollbar,
   .cv-preview-popup header strong { color:#14213d !important; font:800 13px/1.1 'Manrope',sans-serif !important; }
   .cv-preview-popup header small { margin-top:3px !important; color:#7c8da7 !important; font:600 8px/1.2 'DM Sans',sans-serif !important; }
   .cv-preview-popup header nav { height:44px !important; display:grid !important; grid-template-columns:34px 42px 34px !important; align-items:center !important; border:1px solid #cfdded !important; border-radius:13px !important; background:#fff !important; overflow:hidden !important; }
-  .cv-preview-popup header nav button { height:44px !important; padding:0 !important; border:0 !important; background:transparent !important; color:#b00008 !important; font:800 20px/1 'DM Sans',sans-serif !important; }
+  .cv-preview-popup header nav button { height:44px !important; padding:0 !important; border:0 !important; background:transparent !important; color:#0066ff !important; font:800 20px/1 'DM Sans',sans-serif !important; }
   .cv-preview-popup header nav output { color:#52647e !important; font:800 9px/1 'DM Sans',sans-serif !important; text-align:center !important; }
   .cv-preview-popup-stage { min-height:0 !important; overflow:auto !important; padding:8px 8px 32px !important; touch-action:pan-x pan-y !important; -webkit-overflow-scrolling:touch !important; box-sizing:border-box !important; }
   .cv-preview-popup-canvas { position:relative !important; margin:0 auto !important; }
@@ -6320,7 +6320,7 @@ body::-webkit-scrollbar,
     border: 0 !important;
     border-radius: 50% !important;
     background: transparent !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: none !important;
     transform: translateY(-50%) !important;
     touch-action: manipulation !important;
@@ -6433,7 +6433,7 @@ body::-webkit-scrollbar,
     border: 2px dashed #93c5fd !important;
     border-radius: 12px !important;
     background: #f8fbff !important;
-    color: #b00008 !important;
+    color: #0066ff !important;
     box-shadow: none !important;
     font: 700 13px 'Manrope', sans-serif !important;
     cursor: pointer !important;
@@ -6742,7 +6742,7 @@ body::-webkit-scrollbar,
   border: 1px solid #c9daf0 !important;
   border-radius: 13px !important;
   background: #edf5ff !important;
-  color: #b00008 !important;
+  color: #0066ff !important;
   box-shadow: none !important;
   cursor: pointer !important;
 }
@@ -6751,8 +6751,8 @@ body::-webkit-scrollbar,
 #cv-builder-workspace .cv-workspace-pagination-bar .cv-pagination-btn svg { display: block !important; width: 20px !important; height: 20px !important; }
 #cv-builder-workspace .cv-workspace-pagination-bar .cv-pagination-btn:hover:not(:disabled) {
   transform: translateY(-1px) !important;
-  border-color: #b00008 !important;
-  background: #b00008 !important;
+  border-color: #0066ff !important;
+  background: #0066ff !important;
   color: #ffffff !important;
 }
 #cv-builder-workspace .cv-workspace-pagination-bar .cv-pagination-btn:disabled { opacity: .38 !important; cursor: not-allowed !important; }
@@ -6778,20 +6778,20 @@ body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container
 /* Brand only the builder interface, never the selected résumé artwork. */
 #cv-template-modal .cv-modal-tag {
   background: #fff1f2 !important;
-  color: #b00008 !important;
+  color: #0066ff !important;
 }
 #cv-template-modal .cv-modal-left {
   background: linear-gradient(180deg, #fffafa, #fff1f2) !important;
 }
 #cv-template-modal .cv-modal-use-btn {
-  background: #b00008 !important;
+  background: #0066ff !important;
   color: #fff !important;
   box-shadow: 0 8px 20px rgba(176, 0, 8, .16) !important;
 }
 #cv-template-modal .cv-modal-use-btn:hover {
   background: #900006 !important;
 }
-#cv-template-modal .cv-modal-info-link { color: #b00008 !important; }
+#cv-template-modal .cv-modal-info-link { color: #0066ff !important; }
 
 body.cv-thumbnail-capture-mode .cv-builder-workspace-view:not(.cv-hidden) .cv-preview-sheet-container > .cv-preview,
 body.cv-thumbnail-capture-mode #cv-builder-workspace .cv-preview-sheet-container > .cv-preview {

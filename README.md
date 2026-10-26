@@ -7,8 +7,6 @@ Local migration built from the public Medbiomate website and the supplied Trikon
 Requires Node 24+ and Python 3 for content imports. On this computer, `./start-local.sh` also finds the bundled Node runtime automatically.
 
 ```sh
-git clone --recurse-submodules https://github.com/Fuhadsaneenp/medbiomate.git
-cd medbiomate
 npm install --prefix backend
 npm run dev
 ```
@@ -17,7 +15,7 @@ Website: http://127.0.0.1:3000
 Admin console: http://127.0.0.1:3000/admin
 API is proxied through the website to port 4173.
 
-The `backend/` directory is a Git submodule pointing to https://github.com/Fuhadsaneenp/medbiomate_backend. For an existing clone, run `git submodule update --init --recursive`, then `npm install --prefix backend`. Dependencies and private runtime data are excluded from both repositories.
+On this computer the backend dependencies are currently linked to the supplied Trikonet `backend/node_modules`. For a standalone checkout, remove that symlink and run the install command above.
 
 ## Included
 
@@ -60,3 +58,9 @@ The main public pages now share the supplied TriKonet layout patterns with Medbi
 
 ### TriKonet route parity
 The canonical directories are `/jobs`, `/employers` and `/category/:slug`. Older Medbiomate URLs redirect to them. Imported jobs keep `/job/:slug`; new jobs use their saved `/jobs/:slug` path. Admin login and the 33 admin navigation views use the supplied TriKonet source with Medbiomate branding. The original résumé library/CV builder assets are available at `/resume-library` and `/resume-builder`. See `docs/trikonet-parity-audit.json` and `docs/trikonet-page-review.md` for verification and remaining visual-review limits.
+
+## Source-based public UI (26 October 2026)
+
+The public site now uses the adapted TriKonet application in `public/source-runtime/`. The existing standalone admin and backend remain authoritative. Run `python3 scripts/sync-trikonet-source.py /absolute/path/to/Trikonet/frontend` to reproduce the import; its Medbiomate-specific fixes and the verified live ad-placement updates are applied automatically. Do not copy the reference database, accounts, analytics identity or ad publisher.
+
+`source-site.mjs` renders route-specific metadata, structured data and initial crawlable content before the source UI starts. Run `npm test`, `npm run check`, then `npm run test:http` and `npm run test:source-http` against the local server. The HTTP fixtures are for local mode only. See `docs/trikonet-source-seo-review-2026-10-26.md` for scope, changes, evidence and remaining visual/production checks.

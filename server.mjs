@@ -1,3 +1,4 @@
+import {sourcePage} from './source-site.mjs';
 import {canonicalRoute,isJobDetail} from './route-parity.mjs';
 import {sitePath,canonical,sitemapGroups,sitemapXml,sitemapIndex,xmlEscape} from './site-urls.mjs';
 import {replaceElement} from './render-job.mjs';
@@ -39,6 +40,7 @@ const server=http.createServer(async(req,res)=>{
   }
   if(url.pathname==='/robots.txt'){res.setHeader('Content-Type','text/plain');res.end('User-agent: *\nDisallow: /admin\nDisallow: /dashboard\nDisallow: /api/\nSitemap: https://www.medbiomate.com/sitemap_index.xml\n');return;}
   if(url.pathname==='/api-content/pages'){res.setHeader('Content-Type','application/json');res.end(await readFile(resolve(root,'backend/data/pages.json')));return;}
+  const source=await sourcePage(root,url,backendPort);if(source){if(source.redirect){res.writeHead(301,{Location:source.redirect});res.end();return;}res.writeHead(source.status,{'Content-Type':'text/html; charset=utf-8','Cache-Control':source.noindex?'no-store':'no-cache',...(source.noindex?{'X-Robots-Tag':'noindex, follow'}:{})});res.end(source.html);return;}
   const routes=JSON.parse(await readFile(resolve(root,'data/routes.json'),'utf8'));
   if(url.pathname.startsWith('/employer/')){const slug=url.pathname.split('/').filter(Boolean).pop();const response=await fetch(`http://127.0.0.1:${backendPort}/api/wp/employer?slug=${encodeURIComponent(slug)}`);const employers=await response.json();if(employers[0]){const jobs=await fetch(`http://127.0.0.1:${backendPort}/api/wp/job_listing?employer_slug=${encodeURIComponent(slug)}&per_page=6`).then(r=>r.json());const template=await readFile(resolve(root,'public/employer-burjeel-hospital.html'),'utf8');res.setHeader('Content-Type','text/html; charset=utf-8');res.end(renderEmployer(template,employers[0],jobs));return;}}
   if(isJobDetail(url.pathname)){
@@ -64,6 +66,7 @@ const server=http.createServer(async(req,res)=>{
     res.writeHead(record||appPaths.includes(path)?200:404,{'Content-Type':'text/html; charset=utf-8'});res.end(template);return;
    }
   }
+  if(url.pathname.startsWith('/source-runtime/'))res.setHeader('Cache-Control','no-cache');
   res.setHeader('Content-Type',mime[extname(file)]||'application/octet-stream');let body=await readFile(file);if(extname(file)==='.html'){body=body.toString().replace(/<link[^>]+rel=["']canonical["'][^>]*>/g,'<link rel="canonical" href="'+canonical(path)+'">')}res.end(body);
  }catch{res.writeHead(404);res.end('Page not found');}
 });

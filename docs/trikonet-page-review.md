@@ -1,3 +1,5 @@
+Latest implementation and verification: [26 October source migration review](trikonet-source-seo-review-2026-10-26.md). The notes below describe the superseded October 19 replacement UI.
+
 # Medbiomate page review — 19 October 2026
 
 Reference: supplied TriKonet frontend in the neighbouring `Trikonet/frontend` checkout, plus the live TriKonet homepage. The live `/employers` route returned its plain server-rendered fallback during review, so its supplied full frontend implementation was used for the directory design.

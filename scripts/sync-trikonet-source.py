@@ -149,6 +149,7 @@ for favicon in ['favicon-32x32.png','favicon-16x16.png','favicon.ico']:
 # Avoid showing the other brand's animated logo while loading.
 html=re.sub(r'<video class="loading-scene-video".*?</video>','',html,flags=re.S)
 html=html.replace('.preloader-static-logo { display: none;', '.preloader-static-logo { display: block;')
+html=html.replace('favicon-192.png?v=20260929','favicon-192.png?v=medbiomate-20261026')
 html=html.replace('20261012-job-recovery3','20261026-medbiomate-parity')
 html=html.replace('</head>','<link rel="stylesheet" href="/source-runtime/medbiomate-brand.css?v=20261026"></head>')
 (out/'shell.html').write_text(html)

@@ -9,7 +9,7 @@
     "dev:backend": "node backend/server.mjs",
     "check": "node --check server.mjs && node --check render-job.mjs && node --check public/app.js && node --check backend/server.mjs && node --check backend/catalogue.mjs && node --check backend/public/app.js && node --check backend/public/admin.js && node --check public/ui.js && node --check public/home-design.js && node --check public/employer-directory.js && node --check public/site-pages.js && node --check public/member-pages.js && node --check public/trikonet-design.js && node --check public/detail-controller.js && node --check backend/employer-directory.mjs && node --check public/trikonet-listing.js && node --check route-parity.mjs && node --check backend/public/admin-login.js && node --check source-site.mjs && node --check public/source-runtime/app.js",
     "import:wordpress": "python3 scripts/import-wordpress.py",
-    "test": "node --test tests/source-parity.test.mjs tests/admin-editor.test.mjs tests/migration.test.mjs tests/route-parity.test.mjs tests/page-template.test.mjs tests/listing-template.test.mjs backend/employer-directory.test.mjs",
+    "test": "node --test tests/source-parity.test.mjs tests/admin-editor.test.mjs tests/migration.test.mjs tests/route-parity.test.mjs tests/page-template.test.mjs tests/listing-template.test.mjs backend/employer-directory.test.mjs backend/job-link-import.test.mjs backend/public/job-date-defaults.test.mjs backend/public/job-import-matching.test.mjs backend/public/imported-description.test.mjs",
     "test:http": "node tests/http-smoke.mjs",
     "test:source-http": "node tests/source-http.mjs"
   }

@@ -1,0 +1,67 @@
+/* Apply and Follow are available after scrolling, not in the intro header. */
+.detail-exact .detail-hero:not(.employer-hero) .detail-action-group,
+.detail-exact .detail-hero:not(.employer-hero) .detail-actions,
+.emp-profile-header-actions .emp-follow-btn{display:none!important}
+.detail-scroll-actions[hidden]{display:none!important}
+.detail-scroll-actions:not([hidden]){position:fixed;display:flex;align-items:center;gap:12px;bottom:20px;left:50%;right:auto;transform:translateX(-50%);width:min(560px,calc(100% - 32px));z-index:2147483647;box-sizing:border-box;padding:12px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 4px 24px #17243b18}
+.detail-scroll-actions .apply,.company-scroll-follow{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;height:48px;border-radius:12px;background:linear-gradient(135deg,#0066ff,#115dcf);color:#fff;font-size:15px;font-weight:650;padding:0 16px;border:0;cursor:pointer}
+.detail-scroll-actions .save{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:12px;border:1px solid #dce5ef;background:#fff;color:#64748b;cursor:pointer}
+.detail-scroll-actions .save.is-saved{color:#0066ff;background:#eff6ff;border-color:#bfdbfe}
+.detail-scroll-actions :focus-visible{outline:2px solid #0066ff;outline-offset:3px}
+.detail-exact .detail-hero:not(.employer-hero) .detail-hero-inner > .detail-report-corner-btn{position:absolute!important;top:-24px!important;right:24px!important;width:44px!important;height:44px!important;min-height:44px!important;padding:12px!important;margin:0!important;border:1px solid #dce5ef!important;border-radius:50%!important;background:#fff!important;color:#64748b!important;display:grid!important;place-items:center!important;text-decoration:none!important}
+.detail-exact .detail-hero:not(.employer-hero) .detail-hero-inner > .detail-report-corner-btn span{display:none!important}
+.detail-exact .detail-hero:not(.employer-hero) .detail-hero-inner > .detail-report-corner-btn svg{width:18px!important;height:18px!important}
+@media(max-width:850px){
+ .detail-scroll-actions:not([hidden]){bottom:0;left:0;right:0;transform:none;width:100%;padding:12px 16px calc(12px + env(safe-area-inset-bottom));border-radius:0;border-width:1px 0 0;box-shadow:0 -4px 18px #17243b0a}
+ .detail-exact .detail-hero:not(.employer-hero) .detail-hero-inner > .detail-report-corner-btn{top:0!important;right:16px!important}
+}
+
+.job-application-box{position:static;margin:28px 0;padding:0;overflow:hidden;border:1px solid #d9e5fa;border-radius:24px;background:#fff;box-shadow:0 12px 32px #125ac410}
+.job-application-intro{display:flex;align-items:center;gap:16px;margin:0;padding:24px;background:linear-gradient(115deg,#0647b7,#0066ff);color:#fff}
+.job-application-icon{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border:1px solid #ffffff52;border-radius:16px;background:#ffffff1f;color:#fff}
+.job-application-icon svg{width:26px;height:26px}
+.job-application-eyebrow{display:block;margin:0 0 8px;color:#dceaff;font-size:10px;font-weight:700;letter-spacing:1.2px;line-height:1.4}
+.detail-exact .job-application-box h2{margin:0!important;padding:0!important;border:0!important;font-size:24px!important;font-weight:750!important;line-height:1.25!important;letter-spacing:-.6px;color:#fff}
+.job-application-content{padding:24px}
+.detail-exact .job-application-box p{margin:0 0 16px!important;font-size:14px!important;line-height:1.6!important;color:#52647b}
+.detail-exact .job-application-box .job-application-count{display:inline-flex;align-items:center;gap:8px;margin:0 0 24px!important;padding:6px 12px;border-radius:8px;background:#eff5ff;color:#245592;font-size:12px!important;font-weight:600}
+.job-application-count[hidden]{display:none!important}
+.job-application-count::before{content:'';display:block;width:16px;height:16px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3Cpath d='M4 21v-2a8 8 0 0 1 16 0v2'/%3E%3C/svg%3E") center/contain no-repeat}
+.detail-exact .job-application-box .apply{display:flex;align-items:center;justify-content:center;gap:16px;width:100%;min-height:56px;margin:0;padding:12px 20px;border:1px solid #0066ff;border-radius:14px;background:#0066ff;color:#fff;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 6px 16px #0066ff24,inset 0 1px #ffffff26;transition:background-color .15s}
+.detail-exact .job-application-box .apply::after{content:'→';display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#ffffff1c;font-size:21px;font-weight:500}
+.detail-exact .job-application-box .apply:hover{background:#0054d6}
+.job-application-box .apply:focus-visible{outline:2px solid #0066ff;outline-offset:4px}
+@media(max-width:600px){.job-application-intro{padding:24px 20px;gap:12px}.job-application-content{padding:20px}.detail-exact .job-application-box h2{font-size:23px!important}}
+
+@media(max-width:850px){.job-scroll-actions:not([hidden]){bottom:var(--job-footer-viewport-offset,0px);isolation:isolate}}
+
+html.job-detail-route{overflow-anchor:none;scroll-behavior:auto}
+html.job-detail-route body,html.job-detail-route #app,.job-scroll-actions{overflow-anchor:none}
+
+/* The bold application card is reserved for the mobile layout. */
+@media(max-width:850px){
+ .job-application-box{background:#075ae0;border-color:#075ae0;box-shadow:0 12px 28px #0066ff20}
+ .job-application-intro{background:transparent;padding-bottom:16px}
+ .job-application-content{padding-top:0}
+ .detail-exact .job-application-box .job-application-guidance{color:#e5efff}
+ .detail-exact .job-application-box .job-application-count{background:#ffffff1f;color:#fff}
+ .detail-exact .job-application-box .apply{background:#fff;border-color:#fff;color:#0754cf!important;box-shadow:0 6px 16px #003b9226}
+ .detail-exact .job-application-box .apply::after{background:#eaf2ff}
+ .detail-exact .job-application-box .apply:hover{background:#eef5ff}
+ .job-application-box .apply:focus-visible{outline-color:#fff}
+}
+@media(min-width:851px){
+ .job-application-box{background:linear-gradient(120deg,#f0f6ff,#fff);border-color:#cbdcff;border-top:3px solid #0066ff;box-shadow:none;border-radius:20px}
+ .job-application-intro{background:transparent;padding-bottom:16px}
+ .job-application-icon{background:#fff;border-color:#d9e6ff;color:#0066ff}
+ .job-application-eyebrow{color:#195bbd}
+ .detail-exact .job-application-box h2{color:#14243c}
+ .job-application-content{padding-top:0}
+}
+
+@media(min-width:851px){
+ .detail-exact .job-application-box{display:none!important}
+ .detail-exact .detail-hero:not(.employer-hero) .detail-action-group,
+ .detail-exact .detail-hero:not(.employer-hero) .detail-actions{display:flex!important}
+}
+@media(min-width:851px){.detail-exact .detail-hero .detail-actions .apply,.detail-exact .detail-hero .detail-actions .save{visibility:visible!important;opacity:1!important;pointer-events:auto!important}}

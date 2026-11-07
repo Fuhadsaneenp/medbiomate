@@ -1,0 +1,29 @@
+.searchbar,.nurse-search-wrapper,.nurse-hero{overflow:visible!important}
+.searchbar .field,.hero-minimal-field.field-keyword{position:relative;min-width:0}
+.mb-search-picker{position:relative;width:100%;min-width:0}
+.mb-search-picker select[hidden]{display:none!important}
+.mb-picker-trigger{width:100%;border:0;background:transparent;color:#17243b;font-weight:600;line-height:1.4;font-family:inherit;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer;padding:14px 4px;min-height:48px}
+.mb-picker-trigger::after{content:'';width:7px;height:7px;border-right:1.5px solid #64748b;border-bottom:1.5px solid #64748b;transform:rotate(45deg);margin-right:7px;flex-shrink:0}
+.mb-search-panel{position:absolute;top:calc(100% + 12px);left:0;min-width:280px;width:100%;max-width:calc(100vw - 36px);padding:10px;background:#fff;color:#17243b;border:1px solid #dfe7f1;border-radius:14px;box-shadow:0 16px 44px #15335b24;z-index:1200;text-align:left;font-family:inherit;font-size:14px;line-height:1.5}
+.mb-search-panel[hidden],.mb-search-panel [hidden],.custom-select-option[hidden]{display:none!important}
+.mb-search-panel input,.mb-home-location-search{display:block;width:100%;height:42px!important;min-height:42px;padding:10px 12px!important;border:1px solid #dce5f0!important;border-radius:9px!important;background:#f7faff!important;color:#17243b!important;font-family:inherit;font-size:14px!important;box-sizing:border-box;outline-offset:2px}
+.mb-search-panel input:focus-visible,.mb-picker-trigger:focus-visible,.mb-job-suggestion:focus-visible{outline:2px solid #1263e5;outline-offset:2px}
+.mb-search-options{max-height:272px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;margin-top:7px}
+.mb-search-option{display:block;width:100%;padding:10px 12px;border:0;border-radius:8px;background:#fff;color:#34445d;font:inherit;font-family:inherit;text-align:left;cursor:pointer}
+.mb-search-option:hover,.mb-search-option[aria-pressed=true],.mb-search-option.is-active,.mb-job-suggestion:hover,.mb-job-suggestion.is-active{background:#edf5ff!important;color:#105bcb!important}
+.mb-search-empty{font-size:13px!important;line-height:1.6!important;color:#74839a!important;margin:8px 6px!important;white-space:normal}
+.mb-job-suggest-wrap{position:relative}
+.mb-job-suggestions{min-width:320px;padding:10px}
+.mb-search-panel-label{padding:5px 10px!important;margin:0!important;color:#8090a7!important;letter-spacing:1.2px;font-size:10px!important;font-weight:700}
+.mb-job-suggestion{display:flex;flex-direction:column;gap:3px;padding:11px 12px;border-radius:9px;color:#17243b;text-decoration:none!important;border-bottom:1px solid #f0f3f8}
+.mb-job-suggestion strong{font-size:14px!important;font-weight:600!important;line-height:1.4;white-space:normal}
+.mb-job-suggestion span{font-size:12px!important;line-height:1.4;color:#7b899e;white-space:normal}
+.mb-home-location-search{margin:8px;width:calc(100% - 16px)}
+@media(max-width:700px){.mb-search-panel,.mb-job-suggestions{min-width:0;width:100%;top:calc(100% + 6px)}.searchbar .field{overflow:visible!important}.mb-search-options{max-height:230px}.mb-picker-trigger{font-size:14px}}
+/* Popovers must escape the hero and stack above the result cards. */
+.nurse-results-page,.category-results-page{overflow:visible!important}
+.nurse-results-hero,.category-page-hero{overflow:visible!important;position:relative!important;z-index:30!important}
+.nurse-results-hero>.wrap,.category-page-hero>.wrap{overflow:visible!important}
+.nurse-results-hero::before,.nurse-results-hero::after{pointer-events:none!important}
+.nurse-results-layout{position:relative;z-index:1}
+.mb-search-picker:focus-within,.mb-job-suggest-wrap:focus-within{z-index:1300}

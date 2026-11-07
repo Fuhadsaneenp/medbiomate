@@ -1,0 +1,1491 @@
+{
+  "checkedRoutes": 246,
+  "failures": [],
+  "missingOriginalSitemapPaths": {},
+  "unknownRouteStatus": 404,
+  "sitemapUrls": 15487,
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/alerts-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/applicants-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/approve-user",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/candidate-alerts",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/candidates",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/career-contact",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/cart",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": [
+        "[woocommerce_cart]"
+      ]
+    },
+    {
+      "path": "/category/hospital",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/change-password",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/checkout",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": [
+        "[woocommerce_checkout]"
+      ]
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/delete-account",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/delete-profile",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/disclaimer",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/employer-sitemap.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/employer/burjeel-hospital",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/employer/hukma-al-khair-medical-co",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/employers",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/employers-list",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/following-employers",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/gratuity-calculator",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/hospitals-in-dubai",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/aba-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/account-manager-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/acupuncture-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/administration-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/aesthetician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/anesthesia-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/anesthesia-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/anesthesiologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/application-specialist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/assistant-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/attender-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/audiologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ayurveda-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/beauty-laser-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/biomedical-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/biomedical-maintenance-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/biomedical-sales-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/business-development-executive-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/business-development-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cardiologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cardiology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cardiovascular-technologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/caregiver-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cast-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/charge-nurse",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/clinic-supervisor",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/clinical-auditor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/clinical-pathologist",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/consultant-doctor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cosmetology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cryo-technician",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/cssd-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/customer-service-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/delivery-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dental-assistant-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dental-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dental-technician",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dentist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dermatologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dermatology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/dialysis-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/echocardiographer-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/eeg-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/electrocardiographer",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/emergency-medical-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/emergency-medicine-physician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/emergency-response-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/endocrinologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/endoscopy-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/engineering-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ent-department-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/family-medicine-physician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/front-officer-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/general-practitioner-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/gynecology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/head-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/health-and-safety-environment-jos",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/health-informatics-or-emr-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-assistant-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-manager-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-marketing-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-purchase-department-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-quality-department-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/healthcare-rcm-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/histotechnician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/home-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/house-keeper-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/human-resources-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/insurance-coordinator-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/internal-medicine-doctor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/it-clinical-informatics-manager",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ivf-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/massage-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-billing-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-clerk-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-coder-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-insurance-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-lab-technologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-laboratory-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-records-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-regulatory-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-representative-job",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-sales-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-scribe-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-social-worker",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-transcriptionist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/medical-underwriting-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/microbiologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/midwife-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/neonatologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/neonatology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/neurologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/neurology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nurse-director-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nurse-manager-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nurse-specialist",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nursing-educator",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nutrition-dietitian-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/nutritionist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/obstetrician-gynecologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/occupational-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/oncology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/operating-department-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/operation-room-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ophthalmologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ophthalmology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/optometrist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/optometry-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/orthopedic-department-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/other-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/paramedic-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/patient-representative-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pediatric-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pediatrician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmaceutical-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmaceutical-product-specialist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacist-manager",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacy-assistant",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacy-in-charg-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacy-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pharmacy-technician",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/phlebotomist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/physician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/physiotherapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/physiotherapy-assistant-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/podiatrist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/product-specialist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/psychiatrist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/psychologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/pulmonologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/quality-coordinator-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/radiographer-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/radiologist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/radiology-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/radiology-technologist",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/receptionist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/registered-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/respiratory-technician",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/respiratory-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/school-nurse-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/sonographer-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/special-educator-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/specialist-doctor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/speech-pathologist",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/speech-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/sports-medicine-doctor",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/sports-therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/staff-nurse",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/supervisor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/supply-chain",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/surgery-doctor-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/therapist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/trainee-pharmacist",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/ultrasound-technician-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/urology-technician",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/veterinary-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-category/veterinary-surgeon-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/abu-dhabi",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/ajman",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/al-ahsa-governorate",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/al-ain",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/bahrain",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/cairo",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/dammam",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/doha",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/dubai",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/egypt",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/fujairah",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/jeddah",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/kuwait",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/makkah",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/oman",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/qatar",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/ras-al-khaimah",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/riyadh",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/saudi-arabia",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/sharjah",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/tabuk",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/umm-al-quwain",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-location/united-arab-emirates",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/contract",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/freelance",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/full-time",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/internship",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/part-time",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job-type/temporary",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job/insurance-coordinator-76",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job/specialist-anesthesia-18",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job_listing-sitemap.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/job_listing_category-sitemap.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/jobs-list",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/login-register",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/logout",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/meetings-candidate",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/meetings-employer",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/messages",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/my-account",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": [
+        "[woocommerce_my_account]"
+      ]
+    },
+    {
+      "path": "/my-applied",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/my-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/my-resume",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/packages",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/page-sitemap.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/profile",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/quiz-medical-coder",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/register-candidate",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/register-employer",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/resignation-letter-format",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/sample-page-2",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/shop",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/shortlist-candidates",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/shortlist-jobs",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/sitemap_index.xml",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/submit-job",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    },
+    {
+      "path": "/user-dashboard",
+      "status": 200,
+      "canonicalCorrect": true,
+      "rawShortcodes": []
+    }
+  ]
+}

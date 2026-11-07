@@ -1,0 +1,5 @@
+{
+  "application": "frontend",
+  "databaseAccess": false,
+  "api": "https://api.medbiomate.com"
+}

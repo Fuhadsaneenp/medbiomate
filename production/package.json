@@ -1,0 +1,13 @@
+{
+  "name": "medbiomate-www",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node start-production.mjs",
+    "build": "node --check start-production.mjs && node --check server.mjs && node --check public-fetch-cache.mjs"
+  }
+}

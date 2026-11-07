@@ -1,3 +1,4 @@
+import {addPublicGoogleTags} from './public-tags.mjs';
 import {sourcePage} from './source-site.mjs';
 import {canonicalRoute,isJobDetail} from './route-parity.mjs';
 import {sitePath,canonical,sitemapGroups,sitemapXml,sitemapIndex,xmlEscape} from './site-urls.mjs';
@@ -15,6 +16,13 @@ backend.on('error',console.error);
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.gif':'image/gif','.woff':'font/woff','.woff2':'font/woff2','.ttf':'font/ttf','.ico':'image/x-icon'};
 const server=http.createServer(async(req,res)=>{
  const url=new URL(req.url,'http://localhost');
+ if(!/^\/(?:api|admin|media|uploads)(?:[/-]|$)/.test(url.pathname)){
+  const end=res.end;res.end=function(chunk,...args){
+   if(chunk!=null&&/^\s*(?:<!doctype html|<html\b)/i.test(chunk.toString())){chunk=addPublicGoogleTags(chunk.toString());if(!res.headersSent)res.removeHeader('Content-Length');}
+   return end.call(this,chunk,...args);
+  };
+ }
+
  const route=canonicalRoute(url.pathname);if(['GET','HEAD'].includes(req.method)&&route!==url.pathname){const target=new URL(route,'http://localhost');for(const [key,value]of url.searchParams)target.searchParams.append(key,value);res.writeHead(301,{Location:target.pathname+target.search});res.end();return;}
  if(url.pathname==='/api/job-reports'&&req.method==='POST'){
   let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>6000){res.writeHead(413);res.end();return}}
